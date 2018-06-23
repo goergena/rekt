@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 import './App.css';
-import LoginPage from './components/LoginPage/LoginPage';
+import LoginPage from './components/LoginPage/LoginPage.js';
+import HomePage from './components/HomePage/HomePage.js';
+
 
 const Login = () => (
   <LoginPage />
+);
+
+const Home = () => (
+  <HomePage />
 );
 
 class App extends Component {
@@ -12,6 +21,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+        <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
         </div>
       </Router>
