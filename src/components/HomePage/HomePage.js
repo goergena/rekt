@@ -5,8 +5,8 @@ class HomePage extends Component {
     return (
       <div className="HomePage">
         <h2>Home Page</h2>
-      </div>
-      
+        <a href="/login">Login Page</a>
+        </div>
     );
   }
 }
