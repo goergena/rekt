@@ -41,7 +41,7 @@ class LoginForm extends Component {
               <FormControl type="password" placeholder="Password" />
             </FormGroup>
             <FormGroup style={buttonStyle} controlId="formSubmit">
-              <Button bsStyle="primary" type="submit" onClick={this.handleFormSubmit}>
+              <Button bsStyle="primary" type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>
                 Login
               </Button>
             </FormGroup>

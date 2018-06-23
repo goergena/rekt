@@ -19,11 +19,11 @@ const Home = () => (
 
 const Stats = () => (
   <StatsPage />
-)
+);
 
-const StatsTop = () => (
+const StatsA = () => (
   <StatsTop />
-)
+);
 
 class App extends Component {
   render() {
@@ -33,7 +33,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/stats" component={Stats} />
-          <Route path="/stats&top" component={StatsTop} />
+          <Route path="/statstop" component={StatsA} />
         </div>
       </Router>
     );
