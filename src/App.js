@@ -7,6 +7,7 @@ import './App.css';
 import LoginPage from './components/LoginPage/LoginPage.js';
 import HomePage from './components/HomePage/HomePage.js';
 import StatsPage from './components/StatsPage/StatsPage.js';
+import RecPage from './components/RecPage/RecPage.js';
 import StatsTop from './components/StatsPage/StatsTop.js';
 
 const Login = () => (
@@ -25,6 +26,10 @@ const StatsA = () => (
   <StatsTop />
 );
 
+const Rec = () => (
+  <RecPage />
+)
+
 class App extends Component {
   render() {
     return (
@@ -33,6 +38,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/stats" component={Stats} />
+          <Route path="/rec" component={Rec} />
           <Route path="/statstop" component={StatsA} />
         </div>
       </Router>
