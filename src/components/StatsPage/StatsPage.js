@@ -44,61 +44,65 @@ class StatsPage extends Component {
           <button type="submit" className="btn btn-primary my-1">Submit</button>
         </div>
       </form>
-  <br />
-  <br />
+      <br />
+      <br />
   
-<h4>Team: (insert selected teamName here)</h4>
-<h5>team score: {teamScore}</h5>
-<br />
+      <h4>Team: (insert selected teamName here)</h4>
+      <h5>team score: {teamScore}</h5>
+      <br />
 
-<form>
-  <div className="form-row">
-    <div className="form-group col-md-2">
-      <label for="inputDate">Date</label>
-      <input type="text" className="form-control" id="Date"/>
-    </div>
-    <div className="form-group col-md-2">
-      <label for="inputWin">Game Result</label>
-      <select id="inputWin" className="form-control">
-        <option>Choose...</option>
-        <option value="1">Win</option>
-                <option value="0">Loss</option>
-                <option value="tie">Tie</option>
-      </select>
-    </div>
-    <div className="form-group col-md-2">
-      <label for="teamScore">Score</label>
-      <input type="text" className="form-control" id="teamScore"/>
-    </div>
-  </div>
+      <form>
+        <div className="form-row">
+          <div className="form-group col-md-4">
+            <label for="inputDate">Date</label>
+            <input type="text" className="form-control" id="Date"/>
+          </div>
+          <div className="form-group col-md-4">
+            <label for="inputWin">Game Result</label>
+            <select id="inputWin" className="form-control">
+              <option>Choose...</option>
+              <option value="1">Win</option>
+              <option value="0">Loss</option>
+              <option value="tie">Tie</option>
+            </select>
+          </div>
+          <div className="form-group col-md-4">
+            <label for="teamScore">Score</label>
+            <input type="text" className="form-control" id="teamScore"/>
+          </div>
+       </div>
 
-  <div className="form-row">
-  <ol>
-            <li>{bowlers[0]}  
-            <div className="form-group col-md-2">
-      <label for="score">Score</label>
-      <input type="text" className="form-control" id="score"/>
+        <div className="form-row">
+          <div className="form-group col-md-2">
+            <label for="player">Player</label>
+            <select id="player" className="form-control">
+              <option>Choose...</option>
+              <option value={bowlers[0]}>{bowlers[0]}</option>
+              <option value={bowlers[1]}>{bowlers[1]}</option>
+              <option value={bowlers[2]}>{bowlers[2]}</option>
+            </select>
+          </div>
+          <div className="form-group col-md-2">
+            <label for="score">Score</label>
+            <input type="text" className="form-control" id="score"/>
+          </div>
 
-    </div>
-            </li>     
-            <li>{bowlers[1]}</li> 
-            <li>{bowlers[2]}</li> 
-            <li>{bowlers[3]}</li>      
+          <div className="form-group col-md-2">
+            <label for="handicap">Handicap</label>
+            <input type="text" className="form-control" id="handicap"/>
+          </div>
 
-        </ol>
-  </div>
-</form>
-
-
-
-
-<h6>dont remember what i wanted here</h6>
+          <div className="form-group col-md-2">
+            <label for="average">Average</label>
+            <input type="text" className="form-control" id="average"/> 
+          </div>
+   
+        </div> 
+        <button className="btn btn-secondary">Submit</button>
+       
+      </form>
   
-        </div>
- 
-  
-
-
+    </div>
         
     );
   }
