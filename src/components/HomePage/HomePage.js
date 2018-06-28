@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AnnouncementBar } from 'react-announcement-bar';
 
 class HomePage extends Component {
   render() {
@@ -10,9 +11,18 @@ class HomePage extends Component {
         <a href="/buySell">Buy & Sell Equipment</a>
         
 
-<a class="m-microphone"><i class="material-icons" style="font-size:26px;">mic</i></a>
-<a class="m-content">Announcement Content</a>
-{/* <a class="m-close" href="#"><i class="material-icons">close</i></a> */}
+<AnnouncementBar height="60" backgroundColor="#000000" relative={false} width="100%">
+       {
+         () => {
+           return (
+             <div style={{width: "80%", margin: "auto", color: "#ffffff" }}>
+                 Want to recieve notifications
+                 <a href="#" style={{ fontWeight: "bold", color: "#ffffff" }}>ENABLE !</a>
+             </div>
+           )
+         }
+       }
+      </AnnouncementBar>
 </div>
 
 
