@@ -7,8 +7,12 @@ import './App.css';
 import LoginPage from './components/LoginPage/LoginPage.js';
 import HomePage from './components/HomePage/HomePage.js';
 import StatsPage from './components/StatsPage/StatsPage.js';
-import StatsTop from './components/StatsPage/StatsTop.js';
+
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
+
+import RecPage from './components/RecPage/RecPage.js';
+import LeaguePage from './components/LeaguePage/LeaguePage.js';
+
 
 const Login = () => (
   <LoginPage />
@@ -22,9 +26,14 @@ const Stats = () => (
   <StatsPage />
 );
 
-const StatsA = () => (
-  <StatsTop />
-);
+
+const Rec = () => (
+  <RecPage />
+)
+
+const League = () => (
+  <LeaguePage />
+)
 
 const Bowling = () => (
   <BowlingPage />
@@ -38,8 +47,12 @@ class App extends Component {
         <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/stats" component={Stats} />
-          <Route path="/statstop" component={StatsA} />
+
           <Route path="/bowlingpage" component={Bowling} />
+
+          <Route path="/rec" component={Rec} />
+          <Route path="/bowling/blakewood/mondays" component={League} />
+
         </div>
       </Router>
     );
