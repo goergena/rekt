@@ -9,7 +9,6 @@ import HomePage from './components/HomePage/HomePage.js';
 import StatsPage from './components/StatsPage/StatsPage.js';
 import StatsTop from './components/StatsPage/StatsTop.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
-import './firebase/firebase';
 
 const Login = () => (
   <LoginPage />
