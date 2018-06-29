@@ -36,13 +36,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        Test
         <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/stats" component={Stats} />
           <Route path="/statstop" component={StatsA} />
           <Route path="/bowlingpage" component={Bowling} />
-
         </div>
       </Router>
     );
