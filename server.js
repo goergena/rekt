@@ -5,7 +5,13 @@ const bodyParser = require("body-parser");
 
 // Set up the Express App
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8081;
+
+app.get('/api/hello', (req, res) => {
+  res.send({ express: 'Hello From Express Yeall' });
+});
+
+
 
 // Require models for syncing
 var db = require("./models");
@@ -22,10 +28,9 @@ if (process.env.NODE_ENV === "production") {
 
 // Start the API server
 
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
+db.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 });
+
 
 

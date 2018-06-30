@@ -2,6 +2,7 @@
   "name": "dusty-project",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8081/",
   "dependencies": {
     "mysql2": "^1.5.3",
     "react": "^16.4.1",
@@ -10,11 +11,10 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "sequelize": "^4.38.0",
-
     "reactstrap": "^6.2.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
