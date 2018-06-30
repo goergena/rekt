@@ -37,10 +37,11 @@ const Bowling = () => (
 )
 
 class App extends Component {
-  state = {
-    response: ''
-  };
 
+    state = {
+      response: ''
+    };
+  
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
@@ -55,6 +56,7 @@ class App extends Component {
 
     return body;
   };
+
 
   render() {
     return (
