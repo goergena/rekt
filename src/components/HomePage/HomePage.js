@@ -7,12 +7,17 @@ class HomePage extends Component {
 
         <h2>REKT</h2>
         <a href="/login">Login</a>
+        <br />
         <a href="/buySell">Buy & Sell Equipment</a>
-        <a href="/stats">Stats  </a>
+        <br />
+        <a href="/stats">Stats</a>
+        <br />
         <a href="/rec">Rec Coord Page </a>
+        <br />
         <a href="/bowling/blakewood/mondays">LEAGUE </a>
-        </div>
-
+        <br />
+        <a href="bowlingpage">Bowling </a>
+      </div>
     );
   }
 }
