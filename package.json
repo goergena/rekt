@@ -4,14 +4,15 @@
   "private": true,
   "proxy": "http://localhost:8100/",
   "dependencies": {
+    "axios": "^0.18.0",
     "mysql2": "^1.5.3",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "sequelize": "^4.38.0",
-    "reactstrap": "^6.2.0"
+    "reactstrap": "^6.2.0",
+    "sequelize": "^4.38.0"
   },
   "scripts": {
     "start": "react-scripts start",

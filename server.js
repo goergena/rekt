@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 // const routes = require("./routes");
+var db = require("./models");
 
 
 const app = express();
@@ -12,13 +13,17 @@ app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express Yeall' });
 });
 
-// app.get('/api/sports', (req, res) => {
-  
-// })
+app.get('/api/sports', (req, res) => {
+  db.Sports.findAll({
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
 
 
 // Require models for syncing
-var db = require("./models");
+
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
