@@ -2,7 +2,7 @@
   "name": "dusty-project",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8081/",
+  "proxy": "http://localhost:8100/",
   "dependencies": {
     "mysql2": "^1.5.3",
     "react": "^16.4.1",

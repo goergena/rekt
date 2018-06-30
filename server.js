@@ -1,16 +1,16 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 // const routes = require("./routes");
 
 
-// Set up the Express App
 const app = express();
-const PORT = process.env.PORT || 8081;
+const port = process.env.PORT || 8100;
+
 
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express Yeall' });
 });
-
 
 
 // Require models for syncing
@@ -31,6 +31,4 @@ if (process.env.NODE_ENV === "production") {
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 });
-
-
 
