@@ -5,12 +5,16 @@ const bodyParser = require("body-parser");
 
 
 const app = express();
-const port = process.env.PORT || 8100;
+const PORT = process.env.PORT || 8100;
 
 
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express Yeall' });
 });
+
+// app.get('/api/sports', (req, res) => {
+  
+// })
 
 
 // Require models for syncing
