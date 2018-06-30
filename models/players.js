@@ -8,14 +8,14 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        teamId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1,
-            validate: {
-                len: [1]
-            }
-        },
+        // teamId: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     defaultValue: 1,
+        //     validate: {
+        //         len: [1]
+        //     }
+        // },
     });
 
     Players.associate = function(models) {
