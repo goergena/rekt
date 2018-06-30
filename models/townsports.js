@@ -1,21 +1,19 @@
 module.exports = function (sequelize, DataTypes) {
-    var TownSports = sequelize.define("Townsports", {
+    var TownSports = sequelize.define("TownSports", {
         townId: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1,
-            validate: {
-                len: [1]
-            }
+            primaryKey: true,
+            autoIncrement: true,
         },
-        sportId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1,
-            validate: {
-                len: [1]
-            }
-        },
+        status: DataTypes.STRING
+        
     });
-    return Townsports;
+
+    TownSports.associate = function(models) {
+        TownSports.hasMany(models.Leagues, {
+          onDelete: "cascade"
+        });
+      };
+
+    return TownSports;
 };

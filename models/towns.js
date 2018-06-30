@@ -9,5 +9,15 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
     });
+
+    Towns.associate = function(models) {
+        Towns.belongsToMany(models.Sports, {
+          through: models.TownSports,
+          foreignKey: 'townId',
+          otherKey: 'sportId',
+          constraints: false
+          });
+      }; 
+      
     return Towns;
 };

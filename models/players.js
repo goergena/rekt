@@ -17,5 +17,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
     });
+
+    Players.associate = function(models) {
+        Players.belongsTo(models.Teams, {
+          foreignKey: {
+            allowNull: false
+        }
+    });
+};
+
     return Players;
 };
