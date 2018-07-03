@@ -10,6 +10,7 @@ import StatsPage from './components/StatsPage/StatsPage.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
 import RecPage from './components/RecPage/RecPage.js';
 import LeaguePage from './components/LeaguePage/LeaguePage.js';
+import axios from "axios";
 
 
 // const Login = () => (
@@ -37,14 +38,17 @@ const Bowling = () => (
 )
 
 class App extends Component {
-  state = {
-    response: ''
-  };
 
+    state = {
+      response: '',
+      example: ''
+    };
+  
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
+    this.searchSports();
   }
 
   callApi = async () => {
@@ -56,6 +60,13 @@ class App extends Component {
     return body;
   };
 
+  searchSports = query => {
+    axios.get('/api/sports')
+      .then(res => this.setState({ example: res.data }))
+      .catch(err => console.log(err));
+  };
+
+
   render() {
     return (
       <div className="App">
@@ -63,6 +74,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Rekt</h1>
         </header>
         <p className="App-intro">{this.state.response}</p>
+        <p>{console.log(this.state.example)}</p>
         <Router>
           <div className="App">
             <Route exact path="/" component={Home} />
