@@ -14,11 +14,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "reactstrap": "^6.2.0",
-<<<<<<< HEAD
-    "redux": "^4.0.0"
-=======
+    "redux": "^4.0.0",
     "sequelize": "^4.38.0"
->>>>>>> f64968665086bee8364833edfcc295f18b2f1529
   },
   "scripts": {
     "start": "react-scripts start",
