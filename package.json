@@ -2,7 +2,10 @@
   "name": "dusty-project",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8100/",
   "dependencies": {
+    "axios": "^0.18.0",
+    "mysql2": "^1.5.3",
     "react": "^16.4.1",
     "react-announcement-bar": "0.0.1",
     "react-bootstrap": "^0.32.1",
@@ -11,7 +14,11 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "reactstrap": "^6.2.0",
+<<<<<<< HEAD
     "redux": "^4.0.0"
+=======
+    "sequelize": "^4.38.0"
+>>>>>>> f64968665086bee8364833edfcc295f18b2f1529
   },
   "scripts": {
     "start": "react-scripts start",
