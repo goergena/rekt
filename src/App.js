@@ -10,13 +10,8 @@ import StatsPage from './components/StatsPage/StatsPage.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
 import RecPage from './components/RecPage/RecPage.js';
 import LeaguePage from './components/LeaguePage/LeaguePage.js';
-<<<<<<< HEAD
 import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
-=======
-import axios from "axios";
-
->>>>>>> f64968665086bee8364833edfcc295f18b2f1529
 
 // const Login = () => (
 //   <LoginPage />
@@ -60,7 +55,6 @@ class App extends Component {
     const response = await fetch('/api/hello');
     const body = await response.json();
 
-<<<<<<< HEAD
    <div className="container">
           <div className="row">
               <div className="col-md-12">
@@ -80,41 +74,9 @@ class App extends Component {
              {/* REKT */}
           </footer>
       </div>
-        </div>
-      </Router>
-=======
-    if (response.status !== 200) throw Error(body.message);
+        
+     
 
-    return body;
-  };
-
-  searchSports = query => {
-    axios.get('/api/sports')
-      .then(res => this.setState({ example: res.data }))
-      .catch(err => console.log(err));
-  };
-
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Rekt</h1>
-        </header>
-        <p className="App-intro">{this.state.response}</p>
-        <p>{console.log(this.state.example)}</p>
-        <Router>
-          <div className="App">
-            <Route exact path="/" component={Home} />
-            <Route path="/stats" component={Stats} />
-            <Route path="/rec" component={Rec} />
-            <Route path="/bowling/blakewood/mondays" component={League} />
-            <Route path="/bowlingpage" component={Bowling} />
-          </div>
-        </Router>
-      </div>
->>>>>>> f64968665086bee8364833edfcc295f18b2f1529
-    );
   }
 }
 // const App = () => {
