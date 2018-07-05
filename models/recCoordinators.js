@@ -16,14 +16,14 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        townId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1,
-            validate: {
-                len: [1]
-            }
-        },
+       
     });
+    recCoordinators.associate = function(models) {
+    recCoordinators.belongsTo(models.Towns, {
+        foreignKey: {
+            allowNull: false
+        }
+    });
+}
     return recCoordinators;
 };
