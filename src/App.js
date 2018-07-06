@@ -41,7 +41,7 @@ class App extends Component {
 
     state = {
       response: '',
-      example: ''
+      example: []
     };
   
   componentDidMount() {
@@ -64,8 +64,17 @@ class App extends Component {
     axios.get('/api/sports')
       .then(res => this.setState({ example: res.data }))
       .catch(err => console.log(err));
+     
+      this.renderSports();
   };
 
+
+  renderSports = () => {
+    console.log('heyyy');
+
+    const kittens = this.state.example;
+    console.log(kittens + " kittens furrever");
+  }
 
   render() {
     return (
@@ -75,6 +84,12 @@ class App extends Component {
         </header>
         <p className="App-intro">{this.state.response}</p>
         <p>{console.log(this.state.example)}</p>
+        <div>{this.state.example.map((thing, index) => (
+      
+        <p key={thing.id}>Testing: {thing.sport} has ID: {thing.id}</p>)
+        )}
+        </div>
+        <p id="sportsTarget"> hello hello </p>
         <Router>
           <div className="App">
             <Route exact path="/" component={Home} />
