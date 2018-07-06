@@ -15,7 +15,7 @@ class HomePage extends Component {
         <br />
         <a href="/bowling/blakewood/mondays">LEAGUE </a>
         <br />
-        <a href="bowlingpage">Bowling </a>
+        <a href="/bowling">Bowling </a>
       </div>
     );
   }

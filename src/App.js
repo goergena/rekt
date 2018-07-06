@@ -41,7 +41,8 @@ class App extends Component {
 
     state = {
       response: '',
-      example: []
+      example: [],
+      bowling: ''
     };
   
   componentDidMount() {
@@ -49,6 +50,7 @@ class App extends Component {
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
     this.searchSports();
+    this.searchOne();
   }
 
   callApi = async () => {
@@ -64,17 +66,16 @@ class App extends Component {
     axios.get('/api/sports')
       .then(res => this.setState({ example: res.data }))
       .catch(err => console.log(err));
-     
-      this.renderSports();
   };
 
 
-  renderSports = () => {
-    console.log('heyyy');
+  searchOne = () => {
+    axios.get('/api/sports/bowling')
+      .then(res => this.setState({ bowling: res.data }))
+      .catch(err => console.log(err));
+  };
 
-    const kittens = this.state.example;
-    console.log(kittens + " kittens furrever");
-  }
+
 
   render() {
     return (
@@ -84,19 +85,21 @@ class App extends Component {
         </header>
         <p className="App-intro">{this.state.response}</p>
         <p>{console.log(this.state.example)}</p>
+        <p>{console.log(this.state.bowling)}</p>
         <div>{this.state.example.map((thing, index) => (
       
         <p key={thing.id}>Testing: {thing.sport} has ID: {thing.id}</p>)
         )}
+        <p>Goal- make each of these a link to their sports page (/bowling, /softball, etc)</p>
         </div>
-        <p id="sportsTarget"> hello hello </p>
+   
         <Router>
           <div className="App">
             <Route exact path="/" component={Home} />
             <Route path="/stats" component={Stats} />
             <Route path="/rec" component={Rec} />
             <Route path="/bowling/blakewood/mondays" component={League} />
-            <Route path="/bowlingpage" component={Bowling} />
+            <Route path="/bowling" component={Bowling} />
           </div>
         </Router>
       </div>

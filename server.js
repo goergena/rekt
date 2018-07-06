@@ -22,6 +22,19 @@ app.get('/api/sports', (req, res) => {
 });
 
 
+
+app.get('/api/sports/:sport', (req, res) => {
+  db.Sports.findOne({
+    where: 
+    {sport: req.params.sport},
+    include: [db.Towns]
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
+
+
 // Require models for syncing
 
 
