@@ -42,7 +42,10 @@ class App extends Component {
     state = {
       response: '',
       example: [],
-      bowling: ''
+      bowling: {},
+      blakewoodBowling: '',
+      leagues: '',
+      townsApp: []
     };
   
   componentDidMount() {
@@ -51,6 +54,9 @@ class App extends Component {
       .catch(err => console.log(err));
     this.searchSports();
     this.searchOne();
+    this.searchTwo();
+    this.searchThree();
+   // this.searchFour();
   }
 
   callApi = async () => {
@@ -71,10 +77,37 @@ class App extends Component {
 
   searchOne = () => {
     axios.get('/api/sports/bowling')
-      .then(res => this.setState({ bowling: res.data }))
+      .then(res => this.setState({ 
+        bowling: res.data,
+        townsApp: res.data.Towns }))
       .catch(err => console.log(err));
   };
 
+  searchTwo = () => {
+    axios.get('/api/townsports/1')
+      .then(res => this.setState({ blakewoodBowling: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  //this call works, but we're trying something else below
+
+  // searchThree = () => {
+  //   axios.get('/api/leagues/2')
+  //     .then(res => this.setState({ leagues: res.data }))
+  //     .catch(err => console.log(err));
+  // };
+
+  searchThree = () => {
+    axios.get('/api/teams/2')
+      .then(res => this.setState({ leagues: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  // searchFour = () => {
+  //   axios.get('/api/towns')
+  //     .then(res => this.setState({ towns: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
 
   render() {
@@ -86,6 +119,10 @@ class App extends Component {
         <p className="App-intro">{this.state.response}</p>
         <p>{console.log(this.state.example)}</p>
         <p>{console.log(this.state.bowling)}</p>
+        <p>{console.log(this.state.bowling.Towns)}</p>
+        <p>{console.log(this.state.blakewoodBowling)}</p>
+        <p>{console.log(this.state.leagues)}</p>
+        <p>{console.log(this.state.townsApp)}</p>
         <div>{this.state.example.map((thing, index) => (
       
         <p key={thing.id}>Testing: {thing.sport} has ID: {thing.id}</p>)

@@ -5,35 +5,7 @@ import axios from "axios";
 
 
 class BowlingPage extends Component {
-    
-    state = {
-        response: []
-    }
 
-    componentDidMount() {
-        // this.callApi()
-        //   .then(res => this.setState({ response: res.data}))
-        //   .catch(err => console.log(err));
-
-        this.searchSports();
-      }
-    
-    //   callApi = async () => {
-    //     const response = await fetch('/api/sports/bowling');
-    //     const body = await response.json();
-    
-    //     if (response.status !== 200) throw Error(body.message);
-    
-    //     return body;
-    //   };
-
-
-
-  searchSports = query => {
-    axios.get('/api/sports/bowling')
-      .then(res => this.setState({ response: res.data }))
-      .catch(err => console.log(err));
-  };
 
     constructor(props) {
         super(props)
@@ -41,6 +13,8 @@ class BowlingPage extends Component {
         this.state = {
             logo: ['Test', 'Test2', 'Test3'],
             cities: ['Cleveland', 'Medina', 'Firelands'],
+            sport: {},
+            towns: [],
             leagues: ['Bowling', 'Softball'],
             dropdownOpen: false
         }
@@ -51,6 +25,21 @@ class BowlingPage extends Component {
           dropdownOpen: !prevState.dropdownOpen
         }));
       }
+
+
+      componentDidMount() {
+        this.callApi();
+      }
+    
+      callApi = async () => {
+        axios.get('/api/sports/bowling')
+        .then(res => this.setState({ 
+          sport: res.data,
+          towns: res.data.Towns,
+          cities: res.data.Towns[0].town }))
+        .catch(err => console.log(err));
+      };
+
 
     render() {
         return (
@@ -86,8 +75,16 @@ class BowlingPage extends Component {
                             <p>{this.state.leagues[1]}</p>
                         </div>
                     </div>
+                    <p>hey whats up hello </p>
+                    <p>{console.log(this.state.sport)}</p>
+                    <p>{console.log(this.state.towns)}</p>
 
-                            <p className="App-intro">{this.state.response}</p>
+                          <div>{this.state.towns.map((thing, index) => (
+      
+      <p key={thing.id}>Testing: {thing.town} has ID: {thing.id}</p>)
+      )}
+      </div>
+
                 </div>
             </div>
         )
