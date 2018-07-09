@@ -14,6 +14,7 @@ class BowlingPage extends Component {
             logo: ['Test', 'Test2', 'Test3'],
             sport: {},
             towns: [],
+            townSports: [],
             leagues: ['Bowling', 'Softball'],
             dropdownOpen: false
         }

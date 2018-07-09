@@ -44,11 +44,25 @@ app.get('/api/towns', (req, res) => {
 
 
 
-app.get('/api/townsports/:id', (req, res) => {
-  db.TownSports.findOne({
-    where: 
-    {id: req.params.id},
-    include: [db.Leagues]
+// app.get('/api/townsports/:id', (req, res) => {
+//   db.TownSports.findOne({
+//     where: 
+//     {id: req.params.id},
+//     include: [db.Leagues]
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+//     console.log(dbSportRes);
+//   });
+// });
+
+app.get('/api/townsports', (req, res) => {
+  db.TownSports.findAll({
+    // where: 
+    // {id: req.params.id},
+    include: [{
+      model: Towns,
+      where: { id: Sequelize.col('townId') }
+  }]
   }).then(function (dbSportRes) {
     res.json(dbSportRes);
     console.log(dbSportRes);

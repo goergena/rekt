@@ -84,7 +84,7 @@ class App extends Component {
   };
 
   searchTwo = () => {
-    axios.get('/api/townsports/1')
+    axios.get('/api/townsports')
       .then(res => this.setState({ blakewoodBowling: res.data }))
       .catch(err => console.log(err));
   };
