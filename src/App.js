@@ -135,7 +135,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/stats" component={Stats} />
             <Route path="/rec" component={Rec} />
-            <Route path="/bowling/blakewood/mondays" component={League} />
+            <Route path="/leagues/mondays" component={League} />
             <Route path="/bowling" component={Bowling} />
           </div>
         </Router>

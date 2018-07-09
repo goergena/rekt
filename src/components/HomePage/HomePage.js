@@ -13,7 +13,7 @@ class HomePage extends Component {
         <br />
         <a href="/rec">Rec Coord Page </a>
         <br />
-        <a href="/bowling/blakewood/mondays">LEAGUE </a>
+        <a href="/leagues/mondays">LEAGUE </a>
         <br />
         <a href="/bowling">Bowling </a>
       </div>
