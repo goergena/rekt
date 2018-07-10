@@ -41,7 +41,7 @@ class App extends Component {
 
     state = {
       response: '',
-      example: ''
+      example: []
     };
   
   // componentDidMount() {
@@ -77,20 +77,13 @@ class App extends Component {
     // const response = await fetch('/api/hello');
     // const body = await response.json();
 
-  //   return (<div className="container">
-  //         <div className="row">
-  //             <div className="col-md-12">
-  //                 <h1>Buy or Sell Your Equipment</h1>
-  //             </div>
-  //         </div>
-  //         <div className="row">
-  //             <div className="col-md-8">
-  //                 <ProductList />
-  //             </div>
-  //             <div className="col-md-4">
-  //                 <Cart />
-  //             </div>
-  //         </div>
+  searchSports = query => {
+    axios.get('/api/sports')
+      .then(res => this.setState({ example: res.data }))
+      .catch(err => console.log(err));
+     
+      this.renderSports();
+  };
 
   //         <footer>
   //            {/* REKT */}
@@ -99,7 +92,39 @@ class App extends Component {
         
      
 
-  // }
+  renderSports = () => {
+    console.log('heyyy');
+
+    const kittens = this.state.example;
+    console.log(kittens + " kittens furrever");
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Welcome to Rekt</h1>
+        </header>
+        <p className="App-intro">{this.state.response}</p>
+        <p>{console.log(this.state.example)}</p>
+        <div>{this.state.example.map((thing, index) => (
+      
+        <p key={thing.id}>Testing: {thing.sport} has ID: {thing.id}</p>)
+        )}
+        </div>
+        <p id="sportsTarget"> hello hello </p>
+        <Router>
+          <div className="App">
+            <Route exact path="/" component={Home} />
+            <Route path="/stats" component={Stats} />
+            <Route path="/rec" component={Rec} />
+            <Route path="/bowling/blakewood/mondays" component={League} />
+            <Route path="/bowlingpage" component={Bowling} />
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
 // const App = () => {
 //   return (
