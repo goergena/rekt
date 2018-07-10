@@ -44,18 +44,15 @@ class App extends Component {
       example: ''
     };
   
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-    this.searchSports();
-  }
+  // componentDidMount() {
+  //   this.callApi()
+  //     .then(res => this.setState({ response: res.express }))
+  //     .catch(err => console.log(err));
+  //   this.searchSports();
+  // }
 
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
-
-   <div className="container">
+  render() {
+    return (<div className="container">
           <div className="row">
               <div className="col-md-12">
                   <h1>Buy or Sell Your Equipment</h1>
@@ -73,11 +70,36 @@ class App extends Component {
           <footer>
              {/* REKT */}
           </footer>
-      </div>
+      </div>)
+  }
+
+  // callApi = async () => {
+    // const response = await fetch('/api/hello');
+    // const body = await response.json();
+
+  //   return (<div className="container">
+  //         <div className="row">
+  //             <div className="col-md-12">
+  //                 <h1>Buy or Sell Your Equipment</h1>
+  //             </div>
+  //         </div>
+  //         <div className="row">
+  //             <div className="col-md-8">
+  //                 <ProductList />
+  //             </div>
+  //             <div className="col-md-4">
+  //                 <Cart />
+  //             </div>
+  //         </div>
+
+  //         <footer>
+  //            {/* REKT */}
+  //         </footer>
+  //     </div>)
         
      
 
-  }
+  // }
 }
 // const App = () => {
 //   return (
