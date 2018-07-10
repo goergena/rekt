@@ -9,7 +9,7 @@ class StatsPage extends Component {
     return (
     <div className="StatsPage container">
       <h2>Stats Page</h2>
-      <h2>Welcome "insert name here", Statistician for Blakewood</h2>
+      <h2>Welcome {this.props.name}, Statistician for Blakewood</h2>
       <form>
         <div className="form-row">
           <div className="form-group col-md-4">

@@ -11,18 +11,20 @@ import BowlingPage from './components/BowlingPage/BowlingPage.js';
 import RecPage from './components/RecPage/RecPage.js';
 import LeaguePage from './components/LeaguePage/LeaguePage.js';
 import axios from "axios";
+import LoginPage from './components/LoginPage/LoginPage.js';
+import NotFound from './components/NotFound/NotFound.js';
+import Callback from './components/Callback/Callback.js'
 
-
-// const Login = () => (
-//   <LoginPage />
+// const Home = () => (
+//   <HomePage />
 // );
 
-const Home = () => (
-  <HomePage />
-);
+const Login = () => (
+  <LoginPage />
+)
 
 const Stats = () => (
-  <StatsPage />
+  <StatsPage {...this.props} />
 );
 
 const Rec = () => (
@@ -37,6 +39,13 @@ const Bowling = () => (
   <BowlingPage />
 )
 
+const CantFind = () => (
+  <NotFound />
+)
+
+const Loading = () => (
+  <Callback />
+)
 class App extends Component {
 
     state = {
@@ -111,11 +120,28 @@ class App extends Component {
 
 
   render() {
+    let mainComponent = "";
+    switch(this.props.location) {
+      case "":
+        mainComponent = <HomePage {...this.props}/>;
+        break;
+      case "callback":
+        mainComponent = Loading();
+        break;
+      case "stats":
+        mainComponent = <StatsPage {...this.props}/>;
+        break;
+      default:
+        mainComponent = CantFind();
+    }
+  
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Rekt</h1>
+          <h1 className="App-title">Welcome to Rekt, {this.props.name} </h1>
         </header>
+        {mainComponent}
         <p className="App-intro">{this.state.response}</p>
         <p>{console.log(this.state.example)}</p>
         <p>{console.log(this.state.bowling)}</p>
@@ -132,7 +158,7 @@ class App extends Component {
    
         <Router>
           <div className="App">
-            <Route exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
             <Route path="/stats" component={Stats} />
             <Route path="/rec" component={Rec} />
             <Route path="/leagues/mondays" component={League} />

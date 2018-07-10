@@ -20,7 +20,20 @@ const buttonStyle = {
   marginBottom: 0
 };
 
+
+
+
 class LoginForm extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      identifier: '',
+      password: '',
+      errors: {},
+      isLoading: false
+    }
+  }
 
   handleFormSubmit(e) {
     e.preventDefault();
@@ -29,9 +42,11 @@ class LoginForm extends Component {
 
   }
 
+
   render() {
     return (
       <div style={divStyle}>
+      <h1> Login </h1>
         <Panel style={panelStyle}>
           <Form horizontal className="LoginForm" id="loginForm">
             <FormGroup controlId="formEmail">

@@ -5,7 +5,12 @@ class HomePage extends Component {
     return (
       <div className="HomePage">
         <h2>REKT</h2>
-        <a href="/login">Login</a>
+        <hr/>
+          Stats Coordinator Login
+          <br />
+          <button onClick={this.props.auth.login}>Login</button>
+
+        <hr/>
         <br />
         <a href="/buySell">Buy & Sell Equipment</a>
         <br />
