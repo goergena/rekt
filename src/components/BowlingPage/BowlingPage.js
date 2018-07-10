@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // Page needs to display cities with teams, city logo, and offered leagues. 
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+//import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import axios from "axios";
 
 
@@ -15,10 +15,13 @@ class BowlingPage extends Component {
             sport: {},
             towns: [],
             townSports: [],
-            leagues: ['Bowling', 'Softball'],
+           // leagues: ['Bowling', 'Softball'],
             dropdownOpen: false
         }
     }
+    // foreach this.state.towns.townSports (bleep)
+    //axios.get'/api/leagues/' + bleep
+    // .then(res => (<dropdownitem>res.leaguename</>))
 
     toggle() {
         this.setState(prevState => ({
@@ -29,6 +32,7 @@ class BowlingPage extends Component {
 
       componentDidMount() {
         this.callApi();
+        this.getLeagues();
       }
     
       callApi = async () => {
@@ -39,47 +43,47 @@ class BowlingPage extends Component {
         .catch(err => console.log(err));
       };
 
+      getLeagues = () => {
+          axios.get('/api/townsports/1')
+          .then(res => this.setState({ 
+            townSports: res.data}))
+          .catch(err => console.log(err));
+      };
 
+      
       render() {
         return (
             <div>
                 <h2>Cities that Offer Bowling</h2>
                 {/*Links Displayed Information --> Leagues*/}
-                <div className="containter">
+                <div className="container">
                     <div className="row"> {
                         this.state.towns.map(place => (
                             <div key={place.id} className="col-md">
                             {/* City logo + Leagues go Here */}
                                 <div><img src={'https://ae01.alicdn.com/kf/HTB1wnzCKVXXXXb3XVXXq6xXFXXXK/CLEVELAND-City-Decal-Landmark-Skyline-Wall-Stickers-Sketch-Decals-Poster-Parede-Home-Decor-Sticker.jpg_640x640.jpg'} alt="Test" className="img-responsive" height="125" width="125" /> </div>
                                 <h1>{place.town}</h1>
-                                <p>{this.state.leagues[0]}</p>
-                                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                                    <DropdownToggle caret>
-                                        Dropdown
-                                    </DropdownToggle>
-                                    <DropdownMenu>
-                                        <DropdownItem header>Choose your League</DropdownItem>
-                                        <DropdownItem href="/">Monday</DropdownItem>
-                                        <DropdownItem href="/">Tuesday</DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
                             </div>
-
                         ))
                     }
-                    
-
                     </div>
-                    <p>hey whats up hello NOTE hey store the town logo in the town in the table. better yet, dont. we have more important stuff to worry about. </p>
-                    <p>{console.log(this.state.sport)}</p>
-                    <p>{console.log(this.state.towns)}</p>
-
-                          <div>{this.state.towns.map((thing, index) => (
+                    <div className="row"> {
+   
+                        this.state.townSports.map(thing => (
+                            <div key={thing.id} className="col-md">
+                                {thing.Leagues.map(item => (
+                                    <ul>
+                                        <li>{item.leagueName}</li>
+                                        </ul>
+                                ))
+                                }
       
-      <p key={thing.id}>Testing: {thing.town} has ID: {thing.id}</p>)
-      )}
-      </div>
+                            </div>
+                        ))
 
+                    }
+                    </div>
+                    <p>eventually store the town logo in the town table </p>
                 </div>
             </div>
         )

@@ -84,10 +84,16 @@ class App extends Component {
   };
 
   searchTwo = () => {
-    axios.get('/api/townsports')
+    axios.get('/api/townsports/1')
       .then(res => this.setState({ blakewoodBowling: res.data }))
       .catch(err => console.log(err));
   };
+
+  //   searchTwo = () => {
+  //   axios.get('/api/leagues/1')
+  //     .then(res => this.setState({ blakewoodBowling: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
   //this call works, but we're trying something else below
 
