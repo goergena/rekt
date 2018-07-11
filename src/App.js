@@ -23,10 +23,6 @@ const Login = () => (
   <LoginPage />
 )
 
-const Stats = () => (
-  <StatsPage {...this.props} />
-);
-
 const Rec = () => (
   <RecPage />
 )
@@ -129,7 +125,7 @@ class App extends Component {
         mainComponent = Loading();
         break;
       case "stats":
-        mainComponent = <StatsPage {...this.props}/>;
+        mainComponent = this.props.auth.isAuthenticated() ? <StatsPage {...this.props}/> : <NotFound />;
         break;
       default:
         mainComponent = CantFind();
@@ -159,7 +155,6 @@ class App extends Component {
         <Router>
           <div className="App">
             <Route path="/login" component={Login} />
-            <Route path="/stats" component={Stats} />
             <Route path="/rec" component={Rec} />
             <Route path="/leagues/mondays" component={League} />
             <Route path="/bowling" component={Bowling} />
