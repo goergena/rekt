@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 // import LoginPage from './components/LoginPage/LoginPage.js';
 import HomePage from './components/HomePage/HomePage.js';
@@ -10,8 +11,8 @@ import StatsPage from './components/StatsPage/StatsPage.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
 import RecPage from './components/RecPage/RecPage.js';
 import LeaguePage from './components/LeaguePage/LeaguePage.js';
-import axios from "axios";
-
+import Cart from './containers/Cart';
+import ProductList from './containers/ProductList';
 
 // const Login = () => (
 //   <LoginPage />
@@ -44,21 +45,17 @@ class App extends Component {
       example: []
     };
   
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-    this.searchSports();
-  }
+  // componentDidMount() {
+  //   this.callApi()
+  //     .then(res => this.setState({ response: res.express }))
+  //     .catch(err => console.log(err));
+  //   this.searchSports();
+  // }
 
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
 
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
+  // callApi = async () => {
+    // const response = await fetch('/api/hello');
+    // const body = await response.json();
 
   searchSports = query => {
     axios.get('/api/sports')
@@ -68,6 +65,12 @@ class App extends Component {
       this.renderSports();
   };
 
+  //         <footer>
+  //            {/* REKT */}
+  //         </footer>
+  //     </div>)
+        
+     
 
   renderSports = () => {
     console.log('heyyy');
@@ -97,11 +100,45 @@ class App extends Component {
             <Route path="/rec" component={Rec} />
             <Route path="/bowling/blakewood/mondays" component={League} />
             <Route path="/bowlingpage" component={Bowling} />
+          </div></Router>
+
+      <div className="container">
+          <div className="row">
+              <div className="col-md-12">
+                  <h1>Buy or Sell Your Equipment</h1>
+              </div>
           </div>
-        </Router>
+          <div className="row">
+              <div className="col-md-8">
+                  <ProductList />
+              </div>
+              <div className="col-md-4">
+                  <Cart />
+              </div>
+        </div>
+      </div>
       </div>
     );
   }
 }
+ {/* // const App = () => { */}
+ {/* //   return (
+// //       <div className="container">
+// //           <div className="row">
+// //               <div className="col-md-12">
+// //                   <h1>Buy or Sell Your Equipment</h1>
+// //               </div>
+// //           </div>
+// //           <div className="row">
+// //               <div className="col-md-8">
+// //                   <ProductList />
+// //               </div>
+// //               <div className="col-md-4">
+// //                   <Cart />
+// //               </div>
+// //           </div>
 
-export default App;
+// //           <footer>
+// //              {/* REKT */}
+
+ export default App;
