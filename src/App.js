@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import './App.css';
 // import LoginPage from './components/LoginPage/LoginPage.js';
 import HomePage from './components/HomePage/HomePage.js';
@@ -61,9 +61,9 @@ class App extends Component {
   
 
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
+    // this.callApi()
+    //   .then(res => this.setState({ response: res.express }))
+    //   .catch(err => console.log(err));
     this.searchSports();
     this.searchOne();
     this.searchTwo();
@@ -196,8 +196,8 @@ class App extends Component {
     );
   }
 }
- {/* // const App = () => { */}
- {/* //   return (
+ /* // const App = () => { */
+ /* //   return (
 // //       <div className="container">
 // //           <div className="row">
 // //               <div className="col-md-12">
@@ -214,6 +214,6 @@ class App extends Component {
 // //           </div>
 
 // //           <footer>
-// //              {/* REKT */}
+// //              {/* REKT */
 
  export default App;

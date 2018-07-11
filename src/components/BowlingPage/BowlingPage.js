@@ -69,7 +69,8 @@ class BowlingPage extends Component {
                     }
                     </div>
                     <LeaguePage 
-                    townSports={this.state.townSports} />
+                    townSports={this.state.townSports}
+                    sport={this.state.sport} />
                     {/* <div className="row"> {
    
                         this.state.townSports.map(thing => (

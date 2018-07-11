@@ -1,5 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
@@ -8,6 +8,7 @@ import productsReducer from './ducks/products';
 import App from './App';
 import './index.css';
 import productsData from './data/products';
+//import Auth from './Auth/Auth.js'
 
 // ReactDOM.render(
 //   <App />,
@@ -33,24 +34,24 @@ render(
   document.getElementById('root')
 );
 
-import Auth from './Auth/Auth.js'
 
-const auth = new Auth();
 
-let state = {};
-window.setState = (changes) => {
-  state = Object.assign({}, state, changes);
-  ReactDOM.render(
-    <App {...state} />,
-    document.getElementById('root')
-  );
-}
+// const auth = new Auth();
 
-/* eslint no-restricted-globals: 0*/
-let initialState = {
-  name: "Zach",
-  location: location.pathname.replace(/^\/?|\/$/g, ""),
-  auth
-}
+// let state = {};
+// window.setState = (changes) => {
+//   state = Object.assign({}, state, changes);
+//   ReactDOM.render(
+//     <App {...state} />,
+//     document.getElementById('root')
+//   );
+// }
 
-window.setState(initialState);
+// /* eslint no-restricted-globals: 0*/
+// let initialState = {
+//   name: "Zach",
+//   location: location.pathname.replace(/^\/?|\/$/g, ""),
+//   auth
+// }
+
+// window.setState(initialState);
