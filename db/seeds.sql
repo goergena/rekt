@@ -5,9 +5,12 @@ INSERT INTO sports (sport) VALUES ("Softball");
 INSERT INTO sports (sport) VALUES ("Basketball");
 
 INSERT INTO towns (town) VALUES ("Blakewood");
+INSERT INTO towns (town) VALUES ("Dustinshire");
+
 
 INSERT INTO townsports (townId, sportId) VALUES (1, 1);
 INSERT INTO townsports (townId, sportId) VALUES (1, 2);
+INSERT INTO townsports (townId, sportId) VALUES (2, 1);
 
 INSERT INTO leagues (leagueName, townsportId) VALUES ("Mondays", 1);
 INSERT INTO leagues (leagueName, townsportId) VALUES ("Tuesdays", 1);

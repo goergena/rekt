@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Auth from '../../Auth/Auth.js'
 
 const bowlers = ['Ali', 'Zach', 'Amanda', 'Anthony'];
 let teamScore = 0;
 
-
 class StatsPage extends Component {
+  componentDidMount() {
+    const auth = new Auth(); 
+    auth.handleAuthentication();
+  }
   render() {
     return (
     <div className="StatsPage container">
