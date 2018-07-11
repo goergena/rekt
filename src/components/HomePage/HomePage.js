@@ -5,6 +5,8 @@ class HomePage extends Component {
     return (
       <div className="HomePage">
         <h2>REKT</h2>
+        <a href="/login">Login</a>
+
         {!this.props.auth.isAuthenticated() && 
         <div>
          <hr/>
@@ -28,6 +30,9 @@ class HomePage extends Component {
         <br />
         <a href="/bowling">Bowling </a>
       </div>
+
+
+
     );
   }
 }

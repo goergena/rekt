@@ -16,14 +16,14 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-
-    });
-    Statisticians.associate = function (models) {
-        Statisticians.belongsTo(models.Towns, {
-            foreignKey: {
-                allowNull: false
+        townId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1,
+            validate: {
+                len: [1]
             }
-        });
-    };
+        },
+    });
     return Statisticians;
 };

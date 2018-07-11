@@ -8,6 +8,14 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        townsportId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1,
+            validate: {
+                len: [1]
+            }
+        },
     });
 
     Leagues.associate = function (models) {
