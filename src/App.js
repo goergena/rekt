@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 // import LoginPage from './components/LoginPage/LoginPage.js';
 import HomePage from './components/HomePage/HomePage.js';
@@ -10,8 +11,8 @@ import StatsPage from './components/StatsPage/StatsPage.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
 import RecPage from './components/RecPage/RecPage.js';
 import LeaguePage from './components/LeaguePage/LeaguePage.js';
-import axios from "axios";
-
+import Cart from './containers/Cart';
+import ProductList from './containers/ProductList';
 
 // const Login = () => (
 //   <LoginPage />
@@ -48,6 +49,7 @@ class App extends Component {
       townsApp: []
     };
   
+
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
@@ -59,14 +61,10 @@ class App extends Component {
    // this.searchFour();
   }
 
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
 
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
+  // callApi = async () => {
+    // const response = await fetch('/api/hello');
+    // const body = await response.json();
 
   searchSports = query => {
     axios.get('/api/sports')
@@ -74,6 +72,12 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  //         <footer>
+  //            {/* REKT */}
+  //         </footer>
+  //     </div>)
+        
+     
 
   searchOne = () => {
     axios.get('/api/sports/bowling')
@@ -141,13 +145,49 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/stats" component={Stats} />
             <Route path="/rec" component={Rec} />
+
             <Route path="/leagues/mondays" component={League} />
             <Route path="/bowling" component={Bowling} />
+          </div></Router>
+
+      <div className="container">
+          <div className="row">
+              <div className="col-md-12">
+                  <h1>Buy or Sell Your Equipment</h1>
+              </div>
+
           </div>
-        </Router>
+          <div className="row">
+              <div className="col-md-8">
+                  <ProductList />
+              </div>
+              <div className="col-md-4">
+                  <Cart />
+              </div>
+        </div>
+      </div>
       </div>
     );
   }
 }
+ {/* // const App = () => { */}
+ {/* //   return (
+// //       <div className="container">
+// //           <div className="row">
+// //               <div className="col-md-12">
+// //                   <h1>Buy or Sell Your Equipment</h1>
+// //               </div>
+// //           </div>
+// //           <div className="row">
+// //               <div className="col-md-8">
+// //                   <ProductList />
+// //               </div>
+// //               <div className="col-md-4">
+// //                   <Cart />
+// //               </div>
+// //           </div>
 
-export default App;
+// //           <footer>
+// //              {/* REKT */}
+
+ export default App;

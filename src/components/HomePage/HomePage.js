@@ -6,6 +6,7 @@ class HomePage extends Component {
       <div className="HomePage">
         <h2>REKT</h2>
         <a href="/login">Login</a>
+
         <br />
         <a href="/buySell">Buy & Sell Equipment</a>
         <br />
@@ -17,6 +18,9 @@ class HomePage extends Component {
         <br />
         <a href="/bowling">Bowling </a>
       </div>
+
+
+
     );
   }
 }
