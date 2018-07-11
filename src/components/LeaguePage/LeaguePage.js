@@ -5,7 +5,7 @@ const LeaguePage = props => (
  
 
     <div className="row"> 
-      <h2>{props.sport.sport}</h2>
+       <h2>{props.sport.sport}</h2> 
       {
         props.townSports.map(thing => (
           <div key={thing.id} className="col-md">
