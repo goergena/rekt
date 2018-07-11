@@ -21,6 +21,90 @@ app.get('/api/sports', (req, res) => {
   });
 });
 
+app.get('/api/sports/:sport', (req, res) => {
+  db.Sports.findOne({
+    where: 
+    {sport: req.params.sport},
+    include: [db.Towns]
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
+
+app.get('/api/towns', (req, res) => {
+  db.Towns.findAll({
+   include: [db.Sports]
+   
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
+
+
+
+// app.get('/api/townsports/:id', (req, res) => {
+//   db.TownSports.findOne({
+//     where: 
+//     {id: req.params.id},
+//     include: [db.Leagues]
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+//     console.log(dbSportRes);
+//   });
+// });
+
+app.get('/api/townsports/:sportId', (req, res) => {
+  db.TownSports.findAll({
+    where: 
+    {sportId: req.params.sportId},
+    include: [db.Leagues]
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
+
+// app.get('/api/leagues/:townsportid', (req, res) => {
+//   db.Leagues.findAll({
+//      where: 
+//     {TownSportId: req.params.townsportid},
+ 
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+//     console.log(dbSportRes);
+//   });
+// });
+
+
+
+app.get('/api/teams/:leagueId', (req, res) => {
+  db.Teams.findAll({
+    where: 
+    {LeagueId: req.params.leagueId},
+    include: [db.Players]
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
+
+//this definitely works, but we're going to try to write a query below
+// app.get('/api/leagues/:id', (req, res) => {
+//   db.Leagues.findOne({
+//     where: 
+//     {id: req.params.id},
+//     include: [db.Teams]
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+//     console.log(dbSportRes);
+//   });
+// });
+
+
+
+
 
 // Require models for syncing
 
@@ -37,7 +121,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Start the API server
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync( { force: true } ).then(function () {
   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 });
 

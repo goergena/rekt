@@ -29,6 +29,11 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+        Teams.hasMany(models.Games, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
     return Teams;
 };

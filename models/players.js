@@ -18,13 +18,18 @@ module.exports = function (sequelize, DataTypes) {
         // },
     });
 
-    Players.associate = function(models) {
+    Players.associate = function (models) {
         Players.belongsTo(models.Teams, {
-          foreignKey: {
-            allowNull: false
-        }
-    });
-};
+            foreignKey: {
+                allowNull: false
+            },
+        });
+        Players.hasMany(models.BowlingStats, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
     return Players;
 };
