@@ -2,23 +2,22 @@ import React from "react";
 // import "./ClickItem.css";
 
 const LeaguePage = props => (
+ 
 
-    <div className="row"> {
-   
-      props.townSports.map(thing => (
+    <div className="row"> 
+      <h2>{props.sport.sport}</h2>
+      {
+        props.townSports.map(thing => (
           <div key={thing.id} className="col-md">
               {thing.Leagues.map(item => (
                   <ul>
                       <li>{item.leagueName}</li>
                       </ul>
-              ))
-              }
+              ))}
 
           </div>
-      ))
-
-  }
-  </div>
+      ))}
+    </div> 
 
 
 );
