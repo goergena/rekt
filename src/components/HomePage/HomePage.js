@@ -7,10 +7,22 @@ class HomePage extends Component {
         <h2>REKT</h2>
         <a href="/login">Login</a>
 
+        {!this.props.auth.isAuthenticated() && 
+        <div>
+         <hr/>
+            <br />
+            <button onClick={this.props.auth.login}>Login</button>
+          <hr/>
+        </div>
+        }
+        <br />
+        {this.props.auth.isAuthenticated() && 
+        <div>
+          <a href="/stats">Stat Coordinator Page </a>
+        </div>
+        }
         <br />
         <a href="/buySell">Buy & Sell Equipment</a>
-        <br />
-        <a href="/stats">Stats</a>
         <br />
         <a href="/rec">Rec Coord Page </a>
         <br />

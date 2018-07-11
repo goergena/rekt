@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import Auth from '../../Auth/Auth.js'
 
 const bowlers = ['Ali', 'Zach', 'Amanda', 'Anthony'];
 let teamScore = 0;
 
-
 class StatsPage extends Component {
+  componentDidMount() {
+    const auth = new Auth(); 
+    auth.handleAuthentication();
+  }
   render() {
     return (
     <div className="StatsPage container">
       <h2>Stats Page</h2>
-      <h2>Welcome "insert name here", Statistician for Blakewood</h2>
+      <h2>Welcome {this.props.name}, Statistician for Blakewood</h2>
       <form>
         <div className="form-row">
           <div className="form-group col-md-4">

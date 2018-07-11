@@ -5,7 +5,7 @@ class StatsTop extends Component {
   render() {
     return (
     <div>
-        <h2>Welcome "insert name here", Statistician for Blakewood</h2>
+        <h2>Welcome "insert name here", Statistician for Blakewood, to the secret page</h2>
        <form>
             <label for="sport">Sport</label>
             <select id="sport">
