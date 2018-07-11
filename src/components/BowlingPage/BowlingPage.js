@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // Page needs to display cities with teams, city logo, and offered leagues. 
 //import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import axios from "axios";
+import LeaguePage from '../LeaguePage/LeaguePage.js';
 
 
 class BowlingPage extends Component {
@@ -67,7 +68,9 @@ class BowlingPage extends Component {
                         ))
                     }
                     </div>
-                    <div className="row"> {
+                    <LeaguePage 
+                    townSports={this.state.townSports} />
+                    {/* <div className="row"> {
    
                         this.state.townSports.map(thing => (
                             <div key={thing.id} className="col-md">
@@ -82,7 +85,7 @@ class BowlingPage extends Component {
                         ))
 
                     }
-                    </div>
+                    </div> */}
                     <p>eventually store the town logo in the town table </p>
                 </div>
             </div>
