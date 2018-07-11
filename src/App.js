@@ -16,15 +16,18 @@ import ProductList from './containers/ProductList';
 
 // const Login = () => (
 //   <LoginPage />
+import axios from "axios";
+import LoginPage from './components/LoginPage/LoginPage.js';
+import NotFound from './components/NotFound/NotFound.js';
+import Callback from './components/Callback/Callback.js'
+
+// const Home = () => (
+//   <HomePage />
 // );
 
-const Home = () => (
-  <HomePage />
-);
-
-const Stats = () => (
-  <StatsPage />
-);
+const Login = () => (
+  <LoginPage />
+)
 
 const Rec = () => (
   <RecPage />
@@ -38,6 +41,13 @@ const Bowling = () => (
   <BowlingPage />
 )
 
+const CantFind = () => (
+  <NotFound />
+)
+
+const Loading = () => (
+  <Callback />
+)
 class App extends Component {
 
     state = {
@@ -121,11 +131,28 @@ class App extends Component {
 
 
   render() {
+    let mainComponent = "";
+    switch(this.props.location) {
+      case "":
+        mainComponent = <HomePage {...this.props}/>;
+        break;
+      case "callback":
+        mainComponent = Loading();
+        break;
+      case "stats":
+        mainComponent = this.props.auth.isAuthenticated() ? <StatsPage {...this.props}/> : <NotFound />;
+        break;
+      default:
+        mainComponent = CantFind();
+    }
+  
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Rekt</h1>
+          <h1 className="App-title">Welcome to Rekt, {this.props.name} </h1>
         </header>
+        {mainComponent}
         <p className="App-intro">{this.state.response}</p>
         <p>{console.log(this.state.example)}</p>
         <p>{console.log(this.state.bowling)}</p>
@@ -142,8 +169,7 @@ class App extends Component {
    
         <Router>
           <div className="App">
-            <Route exact path="/" component={Home} />
-            <Route path="/stats" component={Stats} />
+            <Route path="/login" component={Login} />
             <Route path="/rec" component={Rec} />
 
             <Route path="/leagues/mondays" component={League} />

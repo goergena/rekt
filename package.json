@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:8100/",
   "dependencies": {
+    "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
     "mysql2": "^1.5.3",
     "react": "^16.4.1",
