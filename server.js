@@ -45,16 +45,39 @@ app.get('/api/towns', (req, res) => {
 
 
 
-app.get('/api/townsports/:id', (req, res) => {
-  db.TownSports.findOne({
+// app.get('/api/townsports/:id', (req, res) => {
+//   db.TownSports.findOne({
+//     where: 
+//     {id: req.params.id},
+//     include: [db.Leagues]
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+//     console.log(dbSportRes);
+//   });
+// });
+
+app.get('/api/townsports/:sportId', (req, res) => {
+  db.TownSports.findAll({
     where: 
-    {id: req.params.id},
+    {sportId: req.params.sportId},
     include: [db.Leagues]
   }).then(function (dbSportRes) {
     res.json(dbSportRes);
     console.log(dbSportRes);
   });
 });
+
+// app.get('/api/leagues/:townsportid', (req, res) => {
+//   db.Leagues.findAll({
+//      where: 
+//     {TownSportId: req.params.townsportid},
+ 
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+//     console.log(dbSportRes);
+//   });
+// });
+
 
 
 app.get('/api/teams/:leagueId', (req, res) => {
