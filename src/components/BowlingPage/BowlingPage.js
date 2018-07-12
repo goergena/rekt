@@ -36,8 +36,11 @@ class BowlingPage extends Component {
         this.getLeagues();
       }
     
+
+
       callApi = async () => {
-        axios.get('/api/sports/bowling')
+          // Moved to utils/API.js
+        API.getBowling()
         .then(res => this.setState({ 
           sport: res.data,
           towns: res.data.Towns }))
@@ -45,7 +48,8 @@ class BowlingPage extends Component {
       };
 
       getLeagues = () => {
-          axios.get('/api/townsports/1')
+          // Moved to utils/API.js
+          API.getLeagueList()
           .then(res => this.setState({ 
             townSports: res.data}))
           .catch(err => console.log(err));
