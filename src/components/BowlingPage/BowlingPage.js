@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import axios from "axios";
+// import axios from "axios";
 import LeaguePage from '../LeaguePage/LeaguePage.js';
+import API from '../../utils/API.js'
 
 
 class BowlingPage extends Component {
@@ -30,19 +31,21 @@ class BowlingPage extends Component {
       }
     
       callApi = async () => {
-        axios.get('/api/sports/bowling')
-        .then(res => this.setState({ 
-          sport: res.data,
-          towns: res.data.Towns }))
-        .catch(err => console.log(err));
-      };
+        // Moved to utils/API.js
+      API.getBowling()
+      .then(res => this.setState({ 
+        sport: res.data,
+        towns: res.data.Towns }))
+      .catch(err => console.log(err));
+    };
 
-      getLeagues = () => {
-          axios.get('/api/townsports/1')
-          .then(res => this.setState({ 
-            townSports: res.data}))
-          .catch(err => console.log(err));
-      };
+    getLeagues = () => {
+        // Moved to utils/API.js
+        API.getLeagueList()
+        .then(res => this.setState({ 
+          townSports: res.data}))
+        .catch(err => console.log(err));
+    };
 
       
       render() {

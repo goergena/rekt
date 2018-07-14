@@ -1,20 +1,85 @@
 var db = require("../models");
+const express = require("express");
+const bodyParser = require("body-parser");
 //const Op = db.Sequelize.Op;
 
 
 module.exports = function (app) {
 
-    app.get("/api/bowling/:town", function(req, res) {
-        db.Sports.findOne({
-          where: {
-            town: req.params.town
-          },
-          include: [db.Leagues]
-        }).then(function(dbResp) {
-          res.json(dbResp);
-        });
-      });
-
-
-
+  app.get('/api/sports', (req, res) => {
+    db.Sports.findAll({
+    }).then(function (dbSportRes) {
+      res.json(dbSportRes);
+      console.log(dbSportRes);
+    });
+  });
+  
+  app.get('/api/sports/:sport', (req, res) => {
+    db.Sports.findOne({
+      where: 
+      {sport: req.params.sport},
+      include: [db.Towns]
+    }).then(function (dbSportRes) {
+      res.json(dbSportRes);
+      console.log(dbSportRes);
+    });
+  });
+  
+  app.get('/api/towns', (req, res) => {
+    db.Towns.findAll({
+     include: [db.Sports]
+     
+    }).then(function (dbSportRes) {
+      res.json(dbSportRes);
+      console.log(dbSportRes);
+    });
+  });
+  
+  
+  
+  // app.get('/api/townsports/:id', (req, res) => {
+  //   db.TownSports.findOne({
+  //     where: 
+  //     {id: req.params.id},
+  //     include: [db.Leagues]
+  //   }).then(function (dbSportRes) {
+  //     res.json(dbSportRes);
+  //     console.log(dbSportRes);
+  //   });
+  // });
+  
+  app.get('/api/townsports/:sportId', (req, res) => {
+    db.TownSports.findAll({
+      where: 
+      {sportId: req.params.sportId},
+      include: [db.Leagues]
+    }).then(function (dbSportRes) {
+      res.json(dbSportRes);
+      console.log(dbSportRes);
+    });
+  });
+  
+  // app.get('/api/leagues/:townsportid', (req, res) => {
+  //   db.Leagues.findAll({
+  //      where: 
+  //     {TownSportId: req.params.townsportid},
+   
+  //   }).then(function (dbSportRes) {
+  //     res.json(dbSportRes);
+  //     console.log(dbSportRes);
+  //   });
+  // });
+  
+  
+  
+  app.get('/api/teams/:leagueId', (req, res) => {
+    db.Teams.findAll({
+      where: 
+      {LeagueId: req.params.leagueId},
+      include: [db.Players]
+    }).then(function (dbSportRes) {
+      res.json(dbSportRes);
+      console.log(dbSportRes);
+    });
+  });
 };

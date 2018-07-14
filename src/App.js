@@ -15,7 +15,8 @@ import ProductList from './containers/ProductList';
 // import axios from "axios";
 import LoginPage from './components/LoginPage/LoginPage.js';
 import NotFound from './components/NotFound/NotFound.js';
-import Callback from './components/Callback/Callback.js'
+import Callback from './components/Callback/Callback.js';
+import NavBar from './components/NavBar/NavBar.js';
 
 // const Home = () => (
 //   <HomePage />
@@ -37,14 +38,6 @@ const Bowling = () => (
   <BowlingPage />
 )
 
-const ProductPage = () => (
-  <Product />
-)
-
-const CantFind = () => (
-  <NotFound />
-)
-
 const Loading = () => (
   <Callback />
 )
@@ -62,28 +55,27 @@ class App extends Component {
 
 
   render() {
-    let mainComponent = "";
-    switch(this.props.location) {
-      case "":
-        mainComponent = <HomePage {...this.props}/>;
-        break;
-      case "callback":
-        mainComponent = Loading();
-        break;
-      case "stats":
-        mainComponent = this.props.auth.isAuthenticated() ? <StatsPage {...this.props}/> : <NotFound />;
-        break;
-      default:
-        mainComponent = CantFind();
-    }
+  //   let mainComponent = "";
+  //   switch(this.props.location) {
+  //     case "":
+  //       mainComponent = <HomePage {...this.props}/>;
+  //       break;
+  //     case "callback":
+  //       mainComponent = Loading();
+  //       break;
+  //     case "stats":
+  //       mainComponent = this.props.auth.isAuthenticated() ? <StatsPage {...this.props}/> : <NotFound />;
+  //       break;
+  //   }
   
 
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Rekt {this.props.name} </h1>
+
+          <NavBar></NavBar>
         </header>
-        {mainComponent}
+         {/*mainComponent*/}
    
         <Router>
           <div className="App">
