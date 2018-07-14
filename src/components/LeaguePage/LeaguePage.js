@@ -1,34 +1,26 @@
 import React from "react";
-// import "./ClickItem.css";
 
 const LeaguePage = props => (
  
-
     <div className="row"> 
        <h2>{props.sport.sport}</h2> 
-      {
-        props.townSports.map(thing => (
+       {props.townSports.map(thing => (
           <div key={thing.id} className="col-md">
               {thing.Leagues.map(item => (
-                  <ul>
+                  <ul key={item.id}>
                       <li>{item.leagueName}</li>
                       </ul>
               ))}
 
           </div>
-      ))}
+         ))
+        }
     </div> 
-
-
 );
 
-//export default LeaguePage;
-
-
+export default LeaguePage;
 
 //  import React, { Component } from 'react';
-
-
 
 // const teams = ['Team Dustin', 'Team Mike', 'Team Sean'];
 
@@ -91,4 +83,4 @@ const LeaguePage = props => (
 //   }
 // }
 
-export default LeaguePage;
+// export default LeaguePage;
