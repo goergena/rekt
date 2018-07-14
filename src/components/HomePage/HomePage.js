@@ -18,15 +18,15 @@ class HomePage extends Component {
         <br />
         {this.props.auth.isAuthenticated() && 
         <div>
-          <a href="/stats">Stat Coordinator Page </a>
+          <a href="/stats">Statistician's Portal </a>
         </div>
         }
         <br />
-        <a href="/buySell">Buy & Sell Equipment</a>
+        <a href="/buySell">Buy Equipment</a>
         <br />
         <a href="/rec">Rec Coord Page </a>
         <br />
-        <a href="/leagues/mondays">LEAGUE </a>
+        <a href="/leagues/mondays">Leagues </a>
         <br />
         <a href="/bowling">Bowling </a>
       </div>
