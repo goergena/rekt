@@ -7,8 +7,8 @@ export default {
     return axios.get('/api/sports');
   },
 
-  getBowling: function(chosenSport) {
-      return axios.get('/api/sports/' + chosenSport);
+  getBowling: function() {
+      return axios.get('/api/sports/bowling');
   },
   // Moved from BowlingPage.js
   getLeagueList: function() {
