@@ -83,33 +83,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Rekt {this.props.name} </h1>
         </header>
-<<<<<<< HEAD
-        {/* {mainComponent} */}
-        <p className="App-intro">{this.state.response}</p>
-        <p>{console.log(this.state.example)}</p>
-        <p>{console.log(this.state.bowling)}</p>
-        <p>{console.log(this.state.bowling.Towns)}</p>
-        <p>{console.log(this.state.blakewoodBowling)}</p>
-        <p>{console.log(this.state.leagues)}</p>
-        <p>{console.log(this.state.townsApp)}</p>
-        <div>{this.state.example.map((thing, index) => (
-      
-        <p key={thing.id}>Testing: {thing.sport} has ID: {thing.id}</p>)
-        )}
-        <p>Goal- make each of these a link to their sports page (/bowling, /softball, etc)</p>
-        </div>
-=======
         {mainComponent}
->>>>>>> acdb08597a86e519e80682ef4342ac51251a0087
    
         <Router>
           <div className="App">
             <Route path="/login" component={Login} />
             <Route path="/rec" component={Rec} />
-<<<<<<< HEAD
             <Route path="/products" component={ProductList} />
-=======
->>>>>>> acdb08597a86e519e80682ef4342ac51251a0087
             <Route path="/leagues/mondays" component={League} />
             <Route path="/bowling" component={Bowling} />
           </div></Router>
