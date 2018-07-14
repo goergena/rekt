@@ -11,7 +11,8 @@ import StatsPage from './components/StatsPage/StatsPage.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
 import RecPage from './components/RecPage/RecPage.js';
 import LeaguePage from './components/LeaguePage/LeaguePage.js';
-import Cart from './containers/Cart';
+import Product from './components/Product/Product.js';
+// import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
 
 // const Login = () => (
@@ -41,7 +42,7 @@ const Bowling = () => (
   <BowlingPage />
 )
 
-const Product = () => (
+const ProductPage = () => (
   <Product />
 )
 
@@ -156,7 +157,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Rekt {this.props.name} </h1>
         </header>
-        {mainComponent}
+        {/* {mainComponent} */}
         <p className="App-intro">{this.state.response}</p>
         <p>{console.log(this.state.example)}</p>
         <p>{console.log(this.state.bowling)}</p>
@@ -175,7 +176,7 @@ class App extends Component {
           <div className="App">
             <Route path="/login" component={Login} />
             <Route path="/rec" component={Rec} />
-
+            <Route path="/products" component={ProductList} />
             <Route path="/leagues/mondays" component={League} />
             <Route path="/bowling" component={Bowling} />
           </div></Router>
