@@ -41,6 +41,10 @@ const Bowling = () => (
   <BowlingPage />
 )
 
+const Product = () => (
+  <Product />
+)
+
 const CantFind = () => (
   <NotFound />
 )
@@ -150,7 +154,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Rekt, {this.props.name} </h1>
+          <h1 className="App-title">Welcome to Rekt {this.props.name} </h1>
         </header>
         {mainComponent}
         <p className="App-intro">{this.state.response}</p>
@@ -176,22 +180,6 @@ class App extends Component {
             <Route path="/bowling" component={Bowling} />
           </div></Router>
 
-      <div className="container">
-          <div className="row">
-              <div className="col-md-12">
-                  <h1>Buy or Sell Your Equipment</h1>
-              </div>
-
-          </div>
-          <div className="row">
-              <div className="col-md-8">
-                  <ProductList />
-              </div>
-              <div className="col-md-4">
-                  <Cart />
-              </div>
-        </div>
-      </div>
       </div>
     );
   }
