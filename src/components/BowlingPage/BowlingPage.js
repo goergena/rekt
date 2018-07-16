@@ -29,25 +29,25 @@ class BowlingPage extends Component {
         this.callApi();
         this.getLeagues();
       }
-    
-      callApi = async () => {
+
+      callApi() {
         // Moved to utils/API.js
       API.getBowling()
-      .then(res => this.setState({ 
+      .then(res => this.setState({
         sport: res.data,
         towns: res.data.Towns }))
       .catch(err => console.log(err));
     };
 
-    getLeagues = () => {
+    getLeagues() {
         // Moved to utils/API.js
         API.getLeagueList()
-        .then(res => this.setState({ 
+        .then(res => this.setState({
           townSports: res.data}))
         .catch(err => console.log(err));
     };
 
-      
+
       render() {
         return (
             <div>
@@ -64,7 +64,7 @@ class BowlingPage extends Component {
                         ))
                     }
                     </div>
-                    <LeaguePage 
+                    <LeaguePage
                     townSports={this.state.townSports}
                     sport={this.state.sport} />
                     <p>eventually store the town logo in the town table </p>
