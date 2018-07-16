@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Leagues = sequelize.define("Leagues", {
-        leagueName: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: "Mondays",

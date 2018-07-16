@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Towns = sequelize.define("Towns", {
-        town: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: "Blakewood",

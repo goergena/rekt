@@ -14,6 +14,7 @@ module.exports = function (app) {
     });
   });
   
+  //meh delete this if you dont use it
   app.get('/api/sports/:sport', (req, res) => {
     db.Sports.findOne({
       where: 
@@ -59,19 +60,19 @@ module.exports = function (app) {
     });
   });
   
-  // app.get('/api/leagues/:townsportid', (req, res) => {
-  //   db.Leagues.findAll({
-  //      where: 
-  //     {TownSportId: req.params.townsportid},
+  app.get('/api/leagues/:townsportid', (req, res) => {
+    db.Leagues.findAll({
+       where: 
+      {TownSportId: req.params.townsportid},
    
-  //   }).then(function (dbSportRes) {
-  //     res.json(dbSportRes);
-  //     console.log(dbSportRes);
-  //   });
-  // });
+    }).then(function (dbSportRes) {
+      res.json(dbSportRes);
+      console.log(dbSportRes);
+    });
+  });
   
   
-  
+  //can we write this to include db.bowlingStats and db.games too?
   app.get('/api/teams/:leagueId', (req, res) => {
     db.Teams.findAll({
       where: 

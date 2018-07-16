@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Sports = sequelize.define("Sports", {
-        sport: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
