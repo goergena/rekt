@@ -1,18 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  mode: isProd ? 'production' : 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'build.js'
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'build'),
-    proxy: {
-      '/': 'http://localhost:8100'
-    }
+  optimization: {
+    minimize: isProd
   },
   module: {
     rules: [
