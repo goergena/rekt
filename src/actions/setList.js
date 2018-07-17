@@ -5,9 +5,19 @@ export const setCurrentList= (currentList) => ({
   });
 
     
-  export const setFilterId= (filterId) => ({
-    type: 'SET_FILTER_ID',
-    filterId
+  export const setSportId= (sportId) => ({
+    type: 'SET_SPORT_ID',
+    sportId
+  });
+
+  export const setTownId= (townId) => ({
+    type: 'SET_TOWN_ID',
+    townId
+  });
+
+  export const setTownsportId= (tsId) => ({
+    type: 'SET_TOWNSPORT_ID',
+    tsId
   });
 
 

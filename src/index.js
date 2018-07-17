@@ -13,9 +13,9 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-const testArray = ['bowling', 'basketball', 'softball'];
+//const testArray = ['bowling', 'basketball', 'softball'];
 
-store.dispatch(setCurrentList(testArray));
+store.dispatch(setCurrentList(['salad', 'dressing', 'tomatoes']));
 
 
 render(

@@ -2,7 +2,9 @@
 
 const listReducerDefaultState = {
   currentList: [],
-  filterId: 1
+  townId: 1,
+  sportId: 1,
+  tsId: 1
 
 }
 
@@ -13,10 +15,22 @@ export default (state = listReducerDefaultState, action) => {
       ...state,
       currentList: action.currentList
     };
-    case 'SET_FILTER_ID':
+    case 'SET_SPORT_ID':
     return {
       ...state,
-      filterId: action.filterId
+      sportId: action.sportId
+    };
+
+    case 'SET_TOWN_ID':
+    return {
+      ...state,
+      townId: action.townId
+    };
+
+    case 'SET_TOWNSPORT_ID':
+    return {
+      ...state,
+      tsId: action.tsId
     };
 
     default:

@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ExpenseListItem from './ExpenseListItem';
-import selectExpenses from '../selectors/expenses';
+// import ExpenseListItem from './ExpenseListItem';
+// import currentList from '../selectors/expenses';
+//import LeagueItem
 
+//so the goal is to import current list here (which should be full of a leagueList)
+//and to map over currentList rendering <LeagueItem> for each one
 
 const ExpenseList = (props) => (
     <div>
