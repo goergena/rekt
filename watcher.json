@@ -1,0 +1,6 @@
+[
+  {
+    "path": "src/**/*.js",
+    "cmd": "build:client"
+  }
+]

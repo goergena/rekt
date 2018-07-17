@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Product extends Component {
-    handleClick = () => {
+    handleClick() {
         const { id, addToCart, removeFromCart, isInCart } = this.props;
 
         if (isInCart) {
