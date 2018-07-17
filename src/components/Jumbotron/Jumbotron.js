@@ -1,7 +1,7 @@
 import React from 'react';
 import './Jumbotron.css';
-import Bowling from '../../images/Bowling.jpg'
-import Wood from '../../images/Wood.jpg'
+import Bowling from './Bowling.jpg'
+import Wood from './Wood.jpg'
 
 const items = [
   {

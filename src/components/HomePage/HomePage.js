@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Homepage.css';
+import './HomePage.css';
 import Jumbotron from '../Jumbotron/Jumbotron';
 //  when models and pages are complete, import options
 // import SportsOptions from '../SportsOptions/SportsOptions';
