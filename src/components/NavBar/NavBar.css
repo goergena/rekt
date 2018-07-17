@@ -1,0 +1,22 @@
+.navbar-title:hover {
+    cursor: pointer;
+  }
+  
+  .navbar-main {
+    background-color: #e56;
+    color: #fff;
+  }
+  
+  .navbar-text {
+      color: white !important;
+      vertical-align: middle;
+      margin: 0px 10px 0px 10px;
+  }
+  
+  .clickable:hover {
+      cursor: pointer;
+  }
+  
+  .welcome-text {
+      margin: 0px 10px 0px 10px;
+  }

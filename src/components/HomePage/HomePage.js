@@ -46,7 +46,7 @@ class HomePage extends Component {
         </div>
         }
         <br />
-        <a href="/buySell">Buy Equipment</a>
+        <a href="/buySell">Shop</a>
         <br />
         <a href="/rec">Rec Coord Page </a>
         <br />

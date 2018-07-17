@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import "./NavBar.css";
 
 export default class NavBar extends React.Component {
   render() {
