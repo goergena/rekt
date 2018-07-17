@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setFilterId } from '../actions/setList';
 
 //right now these are just list item things but it would be good for them to be cards
 //or something prettier

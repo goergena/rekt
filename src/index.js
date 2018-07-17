@@ -7,6 +7,7 @@ import rootReducer from './reducers';
 import { setCurrentList } from './actions/setList';
 
 
+
 const store = createStore(rootReducer);
 
 store.subscribe(() => {

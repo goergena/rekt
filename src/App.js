@@ -1,5 +1,7 @@
 // import React, { Component } from 'react';
 import React from 'react';
+
+import SportItem from './components/SportItem';
 // import { setCurrentList } from './actions/setList';
 // import API from './utils/API';
 
@@ -23,7 +25,9 @@ import React from 'react';
 const App = () => (
         <div>
       <h1>Hello World</h1>
+      <SportItem />
       </div>
+
 )
 
 //the goal is to setcurrent list to leagues here 
