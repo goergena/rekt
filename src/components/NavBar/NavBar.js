@@ -18,7 +18,14 @@ export default class NavBar extends React.Component {
           <NavItem>
             <NavLink href="/bowling">Bowling</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="/scorekeeping">ScoreKeeping</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/teamtable">Team Data</NavLink>
+          </NavItem>
         </Nav>
+  
         <Nav>
             <Button color="primary" >Stats Coordinator Login</Button>
         </Nav>
