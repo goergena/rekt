@@ -9,14 +9,14 @@ module.exports = function (sequelize, DataTypes) {
         },
     });
 
-    Sports.associate = function(models) {
-        Sports.belongsToMany(models.Towns, {
-          through: models.TownSports,
-          foreignKey: 'sportId',
-          otherKey: 'townId',
-          constraints: false
-          });
-      }; 
+    // Sports.associate = function(models) {
+    //     Sports.belongsToMany(models.Towns, {
+    //       through: models.TownSports,
+    //       foreignKey: 'sportId',
+    //       otherKey: 'townId',
+    //       constraints: false
+    //       });
+    //   }; 
 
     return Sports;
 };

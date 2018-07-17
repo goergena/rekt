@@ -26,7 +26,12 @@ export default {
 
   getSportsByTown: function (townId) {
     return axios.get('api/sportsintown/' + townId);
+  },
+
+  getPlayers: function (teamId) {
+    return axios.get(`api/players/${teamId}`);
   }
 };
+
 
 //getTownsWhereSport

@@ -10,26 +10,26 @@ module.exports = function (sequelize, DataTypes) {
         },
     });
 
-    Towns.associate = function (models) {
-        Towns.belongsToMany(models.Sports, {
-            through: models.TownSports,
-            foreignKey: 'townId',
-            otherKey: 'sportId',
-            constraints: false
-        });
+    // Towns.associate = function (models) {
+    //     Towns.belongsToMany(models.Sports, {
+    //         through: models.TownSports,
+    //         foreignKey: 'townId',
+    //         otherKey: 'sportId',
+    //         constraints: false
+    //     });
 
-        Towns.hasMany(models.recCoordinators, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+    //     Towns.hasMany(models.recCoordinators, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
 
-        Towns.hasMany(models.Statisticians, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    //     Towns.hasMany(models.Statisticians, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return Towns;
 };

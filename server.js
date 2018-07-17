@@ -20,7 +20,7 @@ app.use(routes);
 
 // Start the API server
 
-db.sequelize.sync( ).then(function () {
+db.sequelize.sync( {force: true} ).then(function () {
   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 });
 

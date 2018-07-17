@@ -8,14 +8,19 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        // teamId: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     defaultValue: 1,
-        //     validate: {
-        //         len: [1]
-        //     }
-        // },
+        average: {
+            type: DataTypes.INTEGER,
+        },
+        handicap: {
+            type: DataTypes.INTEGER,
+        },
+        bestScore: {
+            type: DataTypes.INTEGER,
+        },
+        totalStrikes: {
+            type: DataTypes.INTEGER,
+        },
+
     });
 
     Players.associate = function (models) {
@@ -24,11 +29,11 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             },
         });
-        Players.hasMany(models.BowlingStats, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // Players.hasMany(models.BowlingStats, {
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
     };
 
     return Players;

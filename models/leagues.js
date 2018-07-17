@@ -11,11 +11,11 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Leagues.associate = function (models) {
-        Leagues.belongsTo(models.TownSports, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // Leagues.belongsTo(models.TownSports, {
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
         Leagues.hasMany(models.Teams, {
             foreignKey: {
                 allowNull: false

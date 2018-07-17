@@ -48,7 +48,7 @@ class BowlingPage extends Component {
 
     testLeagues = () => {
         // Moved to utils/API.js
-        API.getLeagueListBetter('1')
+        API.getLeagueListBetter(1)
         .then(res => this.setState({ 
           leagues: res.data}))
         .catch(err => console.log(err));

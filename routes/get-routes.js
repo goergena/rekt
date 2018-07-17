@@ -66,6 +66,16 @@ router.get('/api/teams/:leagueId', (req, res) => {
   });
 });
 
+router.get('/api/players/:teamId', (req, res) => {
+  db.Players.findAll({
+    where: 
+    {teamId: req.params.teamId}
+  }).then(function (dbSportRes) {
+    res.json(dbSportRes);
+    console.log(dbSportRes);
+  });
+});
+
   
 router.get('/api/townsports/:sportId', (req, res) => {
   db.TownSports.findAll({
