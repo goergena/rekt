@@ -12,7 +12,6 @@ class BowlingPage extends Component {
         leagues: [],
         sportTest: [],
         teams: []
-
     }
 
       componentDidMount() {
