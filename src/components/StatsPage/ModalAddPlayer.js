@@ -29,6 +29,14 @@ export default class ModalAddPlayer extends React.Component {
     
       handleFormSubmit = (event) => {
           event.preventDefault();
+          if(this.state.average>300 || this.state.bestScore >300 || this.state.handicap>300) {
+            alert('Cannot exceed 300');
+            return;
+          }
+          if(this.state.average<0 || this.state.bestScore <0 || this.state.handicap<0 || this.state.totalStrikes < 0) {
+            alert('No negative values');
+            return;
+          }
           const newplayer = {
             playerName: this.state.playerName,
             average: this.state.average,
@@ -61,23 +69,27 @@ export default class ModalAddPlayer extends React.Component {
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div className="modal-body">
+    <div className="modal-body text-left">
     
     <form>
   <div className="form-group">
-    <input value={this.state.playerName} onChange={this.handleInputChange}type="text" className="form-control" name="playerName" placeholder="Name (required)"/>
+  <label htmlFor="playerName">Name (required)</label>
+    <input value={this.state.playerName} onChange={this.handleInputChange}type="text" className="form-control" name="playerName"/>
   </div>
   <div className="form-group">
-    <input  value={this.state.average} onChange={this.handleInputChange} type="number" className="form-control" name="average" placeholder="Average (required)"/>
+  <label htmlFor="average">Average (required)</label>
+    <input  value={this.state.average} onChange={this.handleInputChange} type="number" className="form-control" name="average"/>
   </div>
   <div className="form-group">
-  
-    <input value={this.state.handicap} onChange={this.handleInputChange} className="form-control" name="handicap" placeholder="Handicap (required)"/>
+  <label htmlFor="Handicap">Handicap</label>
+    <input value={this.state.handicap} onChange={this.handleInputChange} className="form-control" name="handicap"/>
   </div>
   <div className="form-group">
+  <label htmlFor="Best Score">Best Score</label>
     <input value={this.state.bestScore} onChange={this.handleInputChange} type="number" className="form-control" name="bestScore" placeholder="Best Score"/>
   </div>
   <div className="form-group">
+  <label htmlFor="Total Strikes">Total Strikes</label>
     <input  value={this.state.totalStrikes} onChange={this.handleInputChange}type="number" className="form-control" name="totalStrikes" placeholder="Total Strikes"/>
   </div>
 </form>

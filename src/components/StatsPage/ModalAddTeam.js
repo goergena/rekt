@@ -49,24 +49,23 @@ export default class ModalAddTeam extends React.Component {
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div className="modal-body">
+    <div className="modal-body text-left">
       <form>
         <div className="form-group">
           <label htmlFor="teamName">Team</label>
           <input value={this.state.teamName} onChange={this.handleInputChange} type="text" className="form-control" name="teamName" placeholder="Name (required)"/>
         </div>
         <div className="form-group">
+        <label htmlFor="wins">Wins</label>
           <input  value={this.state.wins} onChange={this.handleInputChange} type="number" className="form-control" name="wins"/>
         </div>
   <div className="form-group">
-  <label></label>
+  <label htmlFor="losses">Losses</label>
     <input value={this.state.losses} onChange={this.handleInputChange} className="form-control" name="losses" placeholder="Handicap (required)"/>
   </div>
   <div className="form-group">
+  <label htmlFor="totalGames">Total Games</label>
     <input value={this.state.totalGames} onChange={this.handleInputChange} type="number" className="form-control" name="totalGames" placeholder="Best Score"/>
-  </div>
-  <div className="form-group">
-    <input  value={this.state.totalStrikes} onChange={this.handleInputChange}type="number" className="form-control" name="totalStrikes" placeholder="Total Strikes"/>
   </div>
 </form>
     </div>

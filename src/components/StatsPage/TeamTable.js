@@ -48,7 +48,7 @@ export default class TeamTable extends React.Component {
     <div className='container'>
 
       {this.state.teams.map(team => (
-        <div key={team.id}>
+        <div key={team.id} className="col-md">
    
           <h2>{team.teamName}</h2> 
           <h4 className='text-center'>Wins: {team.wins} Losses: {team.losses} Total Games: {team.totalGames}</h4>
@@ -59,7 +59,8 @@ export default class TeamTable extends React.Component {
             <TableHeaderColumn width='150' dataField='bestScore'>Best Score</TableHeaderColumn>
             <TableHeaderColumn width='150' dataField='totalStrikes'>Total Strikes</TableHeaderColumn>
           </BootstrapTable>
-          <ModalAddPlayer selectTeamId={this.state.selectTeamId} />
+         
+          <ModalAddPlayer className="text-left" selectTeamId={this.state.selectTeamId} />
       </div>
       ))}
 
