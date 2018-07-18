@@ -1,18 +1,10 @@
 use rekt_db;
 
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Mondays", 1);
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Tuesdays", 1);
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Wednesdays", 1);
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Mondays", 3);
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Thursdays", 3);
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Saturday Morning", 3);
-INSERT INTO leagues (leagueName, townsportId) VALUES ("Monday Night Double-Header", 2);
-
-INSERT INTO teams (teamName, wins, losses, totalGames, leagueId) VALUES ("Team Eleven", 8, 2, 10, 1);
-INSERT INTO teams (teamName, wins, losses, totalGames, leagueId) VALUES ("Spare Me", 5, 5, 10, 1);
-INSERT INTO teams (teamName, wins, losses, totalGames, leagueId) VALUES ("Striking Resemblance", 7, 3, 10, 2);
-INSERT INTO teams (teamName, wins, losses, totalGames, leagueId) VALUES ("Split Happens", 2, 8, 10, 2);
-INSERT INTO teams (teamName, wins, losses, totalGames, leagueId) VALUES ("Discount Turkey", 6, 4, 10, 2);
+INSERT INTO teams (teamName, wins, losses, totalGames) VALUES ("Team Eleven", 8, 2, 10);
+INSERT INTO teams (teamName, wins, losses, totalGames) VALUES ("Spare Me", 5, 5, 10);
+INSERT INTO teams (teamName, wins, losses, totalGames) VALUES ("Striking Resemblance", 7, 3, 10);
+INSERT INTO teams (teamName, wins, losses, totalGames) VALUES ("Split Happens", 2, 8, 10);
+INSERT INTO teams (teamName, wins, losses, totalGames) VALUES ("Discount Turkey", 6, 4, 10);
 
 INSERT INTO players (playerName, average, handicap, bestScore, totalStrikes, teamId) VALUES ("Ali", 89, 66, 104, 15, 1);
 INSERT INTO players (playerName, average, handicap, bestScore, totalStrikes, teamId) VALUES ("Amanda", 150, 5, 200, 75, 1);
@@ -45,3 +37,13 @@ INSERT INTO players (playerName, average, handicap, bestScore, totalStrikes, tea
 -- INSERT INTO recCoordinators (email, pwd, townId) VALUES ("jim@blakewood.gov", "bear", 1);
 
 -- INSERT INTO statisticians (email, pwd, townId) VALUES ("jill@blakewood.gov", "bear", 1);
+
+
+
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Mondays", 1);
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Tuesdays", 1);
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Wednesdays", 1);
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Mondays", 3);
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Thursdays", 3);
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Saturday Morning", 3);
+-- INSERT INTO leagues (leagueName, townsportId) VALUES ("Monday Night Double-Header", 2);
