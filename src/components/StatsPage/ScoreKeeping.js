@@ -81,7 +81,7 @@ const Display = (props) => {
     return (
         <div>
             <button onClick={props.handleRemoveAll}>Remove All</button>
-            {props.score.length === 0 && <p>Enter in your points to get started.</p>}
+            {props.score.length === 0 && <p>Enter in your points to get</p>}
             {
                 props.score.map((points) => (
                     <Option

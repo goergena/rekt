@@ -4,7 +4,6 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
-<<<<<<< HEAD
 // import HomePage from './components/HomePage/HomePage.js';
 // import StatsPage from './components/StatsPage/StatsPage.js';
 import BowlingPage from './components/BowlingPage/BowlingPage.js';
@@ -17,20 +16,6 @@ import ProductList from './containers/ProductList';
 import LoginPage from './components/LoginPage/LoginPage.js';
 // import NotFound from './components/NotFound/NotFound.js';
 // import Callback from './components/Callback/Callback.js';
-=======
-import HomePage from './components/HomePage/HomePage.js';
-import StatsPage from './components/StatsPage/StatsPage.js';
-import Bowling from './components/BowlingPage/BowlingPage.js';
-import Rec from './components/RecPage/RecPage.js';
-import League from './components/LeaguePage/LeaguePage.js';
-import Product from './components/Product/Product.js';
-// import Cart from './containers/Cart';
-import ProductList from './containers/ProductList';
-// import axios from "axios";
-import Login from './components/LoginPage/LoginPage.js';
-import NotFound from './components/NotFound/NotFound.js';
-import Callback from './components/Callback/Callback.js';
->>>>>>> 5b540dd0dfa15945b2b212c4786d8bdf6f1b1811
 import NavBar from './components/NavBar/NavBar.js';
 import ScoreKeeping from './components/StatsPage/ScoreKeeping.js';
 import TeamTable from './components/StatsPage/TeamTable.js';
@@ -39,7 +24,6 @@ import TeamTable from './components/StatsPage/TeamTable.js';
 //   <HomePage />
 // );
 
-<<<<<<< HEAD
 const Table = () => (
   <TeamTable />
 )
@@ -51,23 +35,18 @@ const ScoreKeep = () => (
 const Login = () => (
   <LoginPage />
 )
-=======
-// const Login = () => (
-//   <LoginPage />
-// )
->>>>>>> 5b540dd0dfa15945b2b212c4786d8bdf6f1b1811
 
-// const Rec = () => (
-//   <RecPage />
-// )
+const Rec = () => (
+  <RecPage />
+)
 
-// const League = () => (
-//   <LeaguePage />
-// )
+const League = () => (
+  <LeaguePage />
+)
 
-// const Bowling = () => (
-//   <BowlingPage />
-// )
+const Bowling = () => (
+  <BowlingPage />
+)
 
 // const Loading = () => (
 //   <Callback />

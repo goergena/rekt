@@ -5,7 +5,7 @@ const routes = require("./routes/get-routes");
 const db = require("./models");
 
 const app = express();
-const PORT = process.env.PORT || 8100;
+const PORT = process.env.PORT || 8200;
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));

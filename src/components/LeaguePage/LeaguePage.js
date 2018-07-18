@@ -1,25 +1,43 @@
-import React from "react";
+import React from 'react'
 
-const LeaguePage = props => (
- 
-    <div className="row"> 
-       <h2>{props.sport.sport}</h2> 
-       {props.townSports.map(thing => (
-          <div key={thing.id} className="col-md">
-              {thing.Leagues.map(item => (
-                  <ul key={item.id}>
-                      <li>{item.leagueName}</li>
-                      </ul>
-              ))}
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-          </div>
-         ))
-        }
-    </div> 
-);
+function onAfterDeleteRow(rowKeys) {
+    alert('Rows Dropped ' + rowKeys);
+  }
 
-export default LeaguePage;
+function onAfterInsertRow(row) {
+    let newRowStr = '';
+  
+    for (const prop in row) {
+      newRowStr += prop + ': ' + row[prop] + ' \n';
+    }
+    alert('The new row :\n ' + newRowStr);
+  }
+  
+  const options = {
+    afterInsertRow: onAfterInsertRow,
+    afterDeleteRow: onAfterDeleteRow 
+  };
 
+  // If you want to enable deleteRow, you must enable row selection also.
+const selectRowProp = {
+    mode: 'checkbox'
+  };
+
+  export default class TeamTable extends React.Component {
+    render() {
+      return (
+      <div>
+      <h1>Create a League</h1>
+        <BootstrapTable insertRow={ true } options={ options } deleteRow={ true } selectRow={ selectRowProp }>
+          <TableHeaderColumn width='150' isKey>Team Name</TableHeaderColumn>
+        </BootstrapTable>
+        
+        </div>
+      );
+    }
+  }
 //  import React, { Component } from 'react';
 
 // const teams = ['Team Dustin', 'Team Mike', 'Team Sean'];
