@@ -7,7 +7,7 @@ class HomePage extends Component {
         <h2>REKT</h2>
         <a href="/login">Login</a>
 
-        {!this.props.auth.isAuthenticated() && 
+        {!this.props.auth.isAuthenticated() &&
         <div>
          <hr/>
             <br />
@@ -16,7 +16,7 @@ class HomePage extends Component {
         </div>
         }
         <br />
-        {this.props.auth.isAuthenticated() && 
+        {this.props.auth.isAuthenticated() &&
         <div>
           <a href="/stats">Statistician's Portal </a>
         </div>

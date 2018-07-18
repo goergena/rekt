@@ -1,9 +1,8 @@
-
+const path = require('path')
 const express = require("express");
 const bodyParser = require("body-parser");
-const routes = require("./routes");
-var db = require("./models");
-
+const routes = require("./routes/get-routes");
+const db = require("./models");
 
 const app = express();
 const PORT = process.env.PORT || 8100;
@@ -11,16 +10,22 @@ const PORT = process.env.PORT || 8100;
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+
+app.use(express.static(path.join(__dirname, 'build')));
+
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
+
+// Add a route that points to our index.html for react-router to handle it
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 // Start the API server
 
-db.sequelize.sync( { force: true } ).then(function () {
-  app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
-});
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+// db.sequelize.sync( { force: true } ).then(function () {
+//   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+// });
 
