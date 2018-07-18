@@ -27,7 +27,7 @@ class BowlingPage extends Component {
         return (
             <div>
                 <h2>Cities that Offer Bowling</h2>
-                {console.log(this.state.teams)}
+
                 {/*Links Displayed Information --> Leagues*/}
                 <div className="container">
                     <div className="row"> {

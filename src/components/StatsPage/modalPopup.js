@@ -2,8 +2,6 @@ import React from 'react';
 import API from '../../utils/API';
 
 
-
-
 export default class modalPopup extends React.Component {
 
     constructor(props) {
@@ -16,19 +14,17 @@ export default class modalPopup extends React.Component {
             totalStrikes: 0,
           }
     
-        // this.handleInputChange = this.handleInputChange.bind(this);
-        // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
       }
 
 
-    
-
-    // handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   };
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
     
       handleFormSubmit = (event) => {
           event.preventDefault();
@@ -85,7 +81,7 @@ Add New Player
     <div className="modal-footer">
       <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
       <button    
-    //   disabled={!(this.state.playerName && this.state.average)}
+      disabled={!(this.state.playerName && this.state.average)}
                 onClick={this.handleFormSubmit} type="button" className="btn btn-primary">Save changes</button>
     </div>
   </div>
