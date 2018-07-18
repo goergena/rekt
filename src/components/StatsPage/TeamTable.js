@@ -1,5 +1,6 @@
 import React from 'react';
 import API from '../../utils/API';
+import './teamtable.css';
 import ModalAddPlayer from './ModalAddPlayer';
 import ModalAddTeam from './ModalAddTeam';
 

@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
 import NavBar from './components/NavBar/NavBar.js';
-import ScoreKeeping from './components/StatsPage/ScoreKeeping.js';
 import TeamTable from './components/StatsPage/TeamTable.js';
-import TeamCreation from './components/LeaguePage/LeaguePage.js';
+import HomePage from './components/HomePage/HomePage';
 
-// const Home = () => (
-//   <HomePage />
-// );
+const Home = () => ( <HomePage />);
 
 const Table = () => ( <TeamTable />)
 
@@ -33,6 +27,7 @@ class App extends Component {
 
         <Router>
           <div className="App">
+            <Route exact path = "/" component={Home} />
             <Route path="/shop" component={ProductList} />
             <Route path="/scorekeeping" component={ScoreKeep} />
             <Route path ="/bowlingstats" component={Table} />

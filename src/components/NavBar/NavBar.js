@@ -11,26 +11,15 @@ export default class NavBar extends React.Component {
             <NavLink href="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/rec">Leagues</NavLink>
+            <NavLink href="/shop">Shop</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/productlist">Shop</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/bowling">Bowling</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/scorekeeping">ScoreKeeping</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/teamtable">Team Data</NavLink>
+            <NavLink href="/teamtable">Team Stats</NavLink>
           </NavItem>
         </Nav>
   
-        <Nav>
-            <Button color="primary" >Stats Coordinator Login</Button>
-        </Nav>
-        <h2>Welcome to It's Rec Ball!</h2>
+
+        <h2>It's Rec Ball!</h2>
       </div>
     );
   }
