@@ -1,7 +1,7 @@
 /* eslint no-restrictions-global: 0 */
 
-import auth0 from 'auth0-js';
-import history from '../history';
+// import auth0 from 'auth0-js';
+// import history from '../history';
 
 
 export default class Auth {

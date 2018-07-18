@@ -2,17 +2,26 @@
   "name": "dusty-project",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8100/",
   "dependencies": {
     "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
+    "express": "^4.16.3",
     "mysql2": "^1.5.3",
     "react": "^16.4.1",
+<<<<<<< HEAD
     "react-announcement-bar": "0.0.1",
     "react-bootstrap": "^0.32.1",
+    "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "react-table": "^6.8.6",
+=======
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+>>>>>>> 6a7c5a57f668d723268591832bfe945dbd957ab5
     "reactstrap": "^6.2.0",
     "redux": "^4.0.0",
     "sequelize": "^4.38.0"
@@ -20,10 +29,9 @@
   "scripts": {
     "start": "node server.js",
     "dev:server": "node-dev server.js",
-    "dev": "npm-run-all build:client --parallel watch dev:server",
-    "build:client": "webpack --config webpack.config.js --progress --hide-modules",
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel dev:server build:client ",
+    "build:client": "webpack --config webpack.config.js --progress --hide-modules --watch",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress",
-    "watch": "catbird -c watcher.json",
     "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
@@ -31,8 +39,7 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "catbird": "^1.0.1",
+    "babel-preset-react-app": "^3.1.2",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
