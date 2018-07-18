@@ -8,19 +8,31 @@ router.get('/api/teams/', (req, res) => {
     include: [db.Players]
   }).then(function (dbSportRes) {
     res.json(dbSportRes);
-    console.log(dbSportRes);
   });
 });
 
-router.get('/api/players/:teamId', (req, res) => {
-  db.Players.findAll({
-    where: 
-    {teamId: req.params.teamId}
-  }).then(function (dbSportRes) {
-    res.json(dbSportRes);
-    console.log(dbSportRes);
+
+router.post('/api/players/', (req, res) => {
+  db.Players.create(req.body).then(function (dbPlayer) {
+    res.json(dbPlayer);
   });
 });
+
+router.post('/api/teams', (req, res) => {
+  db.Teams.create(req.body).then(function (dbTeam) {
+    res.json(dbTeam);
+  });
+});
+
+// router.get('/api/players/:teamId', (req, res) => {
+//   db.Players.findAll({
+//     where: 
+//     {teamId: req.params.teamId}
+//   }).then(function (dbSportRes) {
+//     res.json(dbSportRes);
+
+//   });
+// });
 
   
 // router.get('/api/townsports/:sportId', (req, res) => {
@@ -30,14 +42,14 @@ router.get('/api/players/:teamId', (req, res) => {
 //     include: [db.Leagues]
 //   }).then(function (dbSportRes) {
 //     res.json(dbSportRes);
-//     console.log(dbSportRes);
+
 //   });
 // });
 
 // router.get('/api/sports', (req, res) => {
 //   db.Sports.findAll({}).then(function (dbSportRes) {
 //     res.json(dbSportRes);
-//     console.log(dbSportRes);
+//  
 //   });
 // });
 
@@ -48,7 +60,6 @@ router.get('/api/players/:teamId', (req, res) => {
 //   include: [db.Towns]
 // }).then(function (dbSportRes) {
 //   res.json(dbSportRes);
-//   console.log(dbSportRes);
 // });
 // });
 
