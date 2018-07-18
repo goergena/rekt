@@ -27,7 +27,7 @@ import Product from './components/Product/Product.js';
 // import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
 // import axios from "axios";
-import Login from './components/LoginPage/LoginPage.js';
+// import Login from './components/LoginPage/LoginPage.js';
 import NotFound from './components/NotFound/NotFound.js';
 import Callback from './components/Callback/Callback.js';
 >>>>>>> 6a7c5a57f668d723268591832bfe945dbd957ab5
@@ -90,7 +90,8 @@ class App extends Component {
 
         <Router>
           <div className="App">
-            <Route path="/login" component={Login} />
+            <Route path="/homepage" component={HomePage} />
+            {/* <Route path="/login" component={Login} /> */}
             <Route path="/rec" component={Rec} />
             <Route path="/productlist" component={ProductList} />
             <Route path="/leagues/mondays" component={League} />
