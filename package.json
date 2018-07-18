@@ -6,10 +6,9 @@
   "dependencies": {
     "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
+    "express": "^4.16.3",
     "mysql2": "^1.5.3",
     "react": "^16.4.1",
-    "react-announcement-bar": "0.0.1",
-    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
@@ -20,7 +19,7 @@
   "scripts": {
     "start": "node server.js",
     "dev:server": "node-dev server.js",
-    "dev": "npm-run-all build:client --parallel watch dev:server",
+    "dev": "cross-env NODE_ENV=development npm-run-all build:client --parallel watch dev:server",
     "build:client": "webpack --config webpack.config.js --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress",
     "watch": "catbird -c watcher.json",
@@ -32,6 +31,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^3.1.2",
     "catbird": "^1.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
