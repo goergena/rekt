@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import "./NavBar.css";
 
 export default class NavBar extends React.Component {
   render() {
@@ -29,7 +30,7 @@ export default class NavBar extends React.Component {
         <Nav>
             <Button color="primary" >Stats Coordinator Login</Button>
         </Nav>
-        <h2>Welcome to Rec-It-Ball</h2>
+        <h2>Welcome to It's Rec Ball!</h2>
       </div>
     );
   }

@@ -2,7 +2,7 @@
   "name": "dusty-project",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8200/",
+  "proxy": "http://localhost:8100/",
   "dependencies": {
     "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
