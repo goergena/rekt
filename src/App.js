@@ -4,11 +4,8 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
-import Rec from './components/RecPage/RecPage.js';
-
 import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
-
 import NavBar from './components/NavBar/NavBar.js';
 import ScoreKeeping from './components/StatsPage/ScoreKeeping.js';
 import TeamTable from './components/StatsPage/TeamTable.js';
@@ -42,16 +39,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-
           <NavBar></NavBar>
         </header>
-         {/*mainComponent*/}
 
         <Router>
           <div className="App">
-            <Route path="/rec" component={Rec} />
-            <Route path="/productlist" component={ProductList} />
-            <Route path="/league" component={TeamCreate} />
+            <Route path="/shop" component={ProductList} />
             <Route path="/scorekeeping" component={ScoreKeep} />
             <Route path ="/bowlingstats" component={Table} />
             <Route path ="/addteam" component={TeamCreate} />
