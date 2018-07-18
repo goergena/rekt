@@ -18,6 +18,12 @@ router.post('/api/players/', (req, res) => {
   });
 });
 
+router.post('/api/teams', (req, res) => {
+  db.Teams.create(req.body).then(function (dbTeam) {
+    res.json(dbTeam);
+  });
+});
+
 // router.get('/api/players/:teamId', (req, res) => {
 //   db.Players.findAll({
 //     where: 

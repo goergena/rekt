@@ -71,6 +71,7 @@ class App extends Component {
             <Route path="/bowling" component={Bowling} />
             <Route path="/scorekeeping" component={ScoreKeep} />
             <Route path ="/teamtable" component={Table} />
+            <Route path ="/addteam" component={TeamCreate} />
           </div></Router>
 
       </div>

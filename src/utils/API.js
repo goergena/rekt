@@ -10,6 +10,10 @@ export default {
     return axios.post(`api/players/`, req);
   },
 
+  postTeam: function (req) {
+    return axios.post(`api/teams/`, req);
+  },
+
   // getAllSports: function () {
   //   return axios.get('/api/sports');
   // },

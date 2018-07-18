@@ -2,7 +2,7 @@ import React from 'react';
 import API from '../../utils/API';
 
 
-export default class modalPopup extends React.Component {
+export default class ModalAddPlayer extends React.Component {
 
     constructor(props) {
         super(props);
@@ -14,8 +14,9 @@ export default class modalPopup extends React.Component {
             totalStrikes: 0,
           }
     
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        // this.handleInputChange = this.handleInputChange.bind(this);
+        // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        
       }
 
 
@@ -34,8 +35,9 @@ export default class modalPopup extends React.Component {
             handicap: this.state.handicap,
             bestScore: this.state.bestScore,
             totalStrikes: this.state.totalStrikes,
-            TeamId: this.props.TeamId
+            TeamId: 3
           }
+          {console.log(this.props.selectTeamId)}
 
           API.postPlayer(newplayer)
             .catch(err => console.log(err));
@@ -47,7 +49,7 @@ export default class modalPopup extends React.Component {
       return (
       <div>
           <button type="button" className="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-Add New Player
++ New Player
 </button>
 
 <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,6 +62,7 @@ Add New Player
       </button>
     </div>
     <div className="modal-body">
+    
     <form>
   <div className="form-group">
     <input value={this.state.playerName} onChange={this.handleInputChange}type="text" className="form-control" name="playerName" placeholder="Name (required)"/>
@@ -68,6 +71,7 @@ Add New Player
     <input  value={this.state.average} onChange={this.handleInputChange} type="number" className="form-control" name="average" placeholder="Average (required)"/>
   </div>
   <div className="form-group">
+  
     <input value={this.state.handicap} onChange={this.handleInputChange} className="form-control" name="handicap" placeholder="Handicap (required)"/>
   </div>
   <div className="form-group">

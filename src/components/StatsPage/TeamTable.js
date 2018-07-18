@@ -1,6 +1,7 @@
 import React from 'react';
 import API from '../../utils/API';
-import ModalPopup from './modalPopup';
+import ModalAddPlayer from './ModalAddPlayer';
+import ModalAddTeam from './ModalAddTeam';
 
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
@@ -30,22 +31,26 @@ const selectRowProp = {
 
 export default class TeamTable extends React.Component {
   state= {
-    teams: []
+    teams: [],
+    selectTeamId: 2
   }
   componentDidMount() {
     API.getTeamList().then(res => (this.setState({teams: res.data})))
   }
 
-  // componentDidUpdate() {
-  //   API.getTeamList().then(res => (this.setState({teams: res.data})))
-  // }
+  componentDidUpdate() {
+    API.getTeamList().then(res => (this.setState({teams: res.data})))
+  }
+
+  
   render() {
     return (
     <div className='container'>
 
       {this.state.teams.map(team => (
         <div key={team.id}>
-          <h2>{team.teamName}</h2>
+   
+          <h2>{team.teamName}</h2> 
           <h4 className='text-center'>Wins: {team.wins} Losses: {team.losses} Total Games: {team.totalGames}</h4>
           <BootstrapTable data= {team.Players} >
             <TableHeaderColumn width='150' dataField='playerName' isKey>Player</TableHeaderColumn>
@@ -54,10 +59,11 @@ export default class TeamTable extends React.Component {
             <TableHeaderColumn width='150' dataField='bestScore'>Best Score</TableHeaderColumn>
             <TableHeaderColumn width='150' dataField='totalStrikes'>Total Strikes</TableHeaderColumn>
           </BootstrapTable>
-          <ModalPopup TeamId={team.id}/>
+          <ModalAddPlayer selectTeamId={this.state.selectTeamId} />
       </div>
       ))}
 
+      <ModalAddTeam/>
     </div>
     );
   }
