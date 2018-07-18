@@ -12,18 +12,18 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    BowlingStats.associate = function (models) {
-        BowlingStats.belongsTo(models.Players, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-        BowlingStats.belongsTo(models.Games, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // BowlingStats.associate = function (models) {
+    //     BowlingStats.belongsTo(models.Players, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    //     BowlingStats.belongsTo(models.Games, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return BowlingStats;
 };

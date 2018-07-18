@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Add a route that points to our index.html for react-router to handle it
 
@@ -24,8 +24,8 @@ app.get('*', (req, res) => {
 
 // Start the API server
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
-// db.sequelize.sync( { force: true } ).then(function () {
-//   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
-// });
+// app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+db.sequelize.sync().then(function () {
+  app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+});
 

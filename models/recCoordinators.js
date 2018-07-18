@@ -18,12 +18,12 @@ module.exports = function (sequelize, DataTypes) {
         },
        
     });
-    recCoordinators.associate = function(models) {
-    recCoordinators.belongsTo(models.Towns, {
-        foreignKey: {
-            allowNull: false
-        }
-    });
-}
+//     recCoordinators.associate = function(models) {
+//     recCoordinators.belongsTo(models.Towns, {
+//         foreignKey: {
+//             allowNull: false
+//         }
+//     });
+// }
     return recCoordinators;
 };

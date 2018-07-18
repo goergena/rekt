@@ -9,11 +9,11 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    TownSports.associate = function (models) {
-        TownSports.hasMany(models.Leagues, {
-            onDelete: "cascade"
-        });
-    };
+    // TownSports.associate = function (models) {
+    //     TownSports.hasMany(models.Leagues, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
     return TownSports;
 };

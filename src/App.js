@@ -13,7 +13,6 @@ import Product from './components/Product/Product.js';
 // import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
 // import axios from "axios";
-// import Login from './components/LoginPage/LoginPage.js';
 import NotFound from './components/NotFound/NotFound.js';
 import Callback from './components/Callback/Callback.js';
 import NavBar from './components/NavBar/NavBar.js';
@@ -66,8 +65,6 @@ class App extends Component {
 
         <Router>
           <div className="App">
-            <Route path="/homepage" component={HomePage} />
-            {/* <Route path="/login" component={Login} /> */}
             <Route path="/rec" component={Rec} />
             <Route path="/productlist" component={ProductList} />
             <Route path="/league" component={TeamCreate} />

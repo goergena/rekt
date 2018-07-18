@@ -1,19 +1,27 @@
 import axios from "axios";
 
 export default {
-  // Moved from BowlingPage.js
 
-  getAllSports: function() {
-    return axios.get('/api/sports');
+  getTeamList: function () {
+    return axios.get('api/teams/');
   },
 
-  getBowling: function() {
-      return axios.get('/api/sports/bowling');
+  getPlayers: function (teamId) {
+    return axios.get(`api/players/${teamId}`);
   },
-  // Moved from BowlingPage.js
-  getLeagueList: function() {
-      return axios.get('api/townsports/1');
-  }
+
+  // getAllSports: function () {
+  //   return axios.get('/api/sports');
+  // },
+
+  // getBowling: function () {
+  //   return axios.get('/api/sports/bowling');
+  // },
+
+
+  // getLeagueList: function (tsId) {
+  //   return axios.get('api/leagues/' + tsId);
+  // },
 };
 
-//getTownsWhereSport
+

@@ -8,6 +8,15 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        wins: {
+            type: DataTypes.INTEGER,
+        },
+        losses: {
+            type: DataTypes.INTEGER,
+        },
+        totalGames: {
+            type: DataTypes.INTEGER,
+        },
         // leagueId: {
         //     type: DataTypes.INTEGER,
         //     allowNull: false,
@@ -19,21 +28,21 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Teams.associate = function (models) {
-        Teams.belongsTo(models.Leagues, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // Teams.belongsTo(models.Leagues, {
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
         Teams.hasMany(models.Players, {
             foreignKey: {
                 allowNull: false
             }
         });
-        Teams.hasMany(models.Games, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // Teams.hasMany(models.Games, {
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
     };
     return Teams;
 };
