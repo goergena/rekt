@@ -15,25 +15,14 @@ import TeamCreation from './components/LeaguePage/LeaguePage.js';
 //   <HomePage />
 // );
 
-const Table = () => (
-  <TeamTable />
-)
+const Table = () => ( <TeamTable />)
 
-const ScoreKeep = () => (
-  <ScoreKeeping />
-)
+const ScoreKeep = () => (<ScoreKeeping />)
 
-
-const TeamCreate = () => (
-  <TeamCreation />
-)
+const TeamCreate = () => (<TeamCreation />)
 
 
 class App extends Component {
-
-  componentDidMount() {
-
-  }
 
   render() {
     return (
