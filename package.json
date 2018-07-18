@@ -19,10 +19,9 @@
   "scripts": {
     "start": "node server.js",
     "dev:server": "node-dev server.js",
-    "dev": "cross-env NODE_ENV=development npm-run-all build:client --parallel watch dev:server",
-    "build:client": "webpack --config webpack.config.js --progress --hide-modules",
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel dev:server build:client ",
+    "build:client": "webpack --config webpack.config.js --progress --hide-modules --watch",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress",
-    "watch": "catbird -c watcher.json",
     "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
@@ -30,9 +29,7 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.1.2",
-    "catbird": "^1.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
