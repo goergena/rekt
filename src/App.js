@@ -58,6 +58,7 @@ class App extends Component {
 
         <Router>
           <div className="App">
+            <Route path="/homepage" component={HomePage} />
             <Route path="/login" component={Login} />
             <Route path="/rec" component={Rec} />
             <Route path="/productlist" component={ProductList} />

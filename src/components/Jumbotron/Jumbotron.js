@@ -1,7 +1,6 @@
 import React from 'react';
 import './Jumbotron.css';
-import Bowling from './Bowling.jpg'
-import Wood from './Wood.jpg'
+import Bowling from '../../../public/images/Bowling.jpg'
 
 const items = [
   {
@@ -9,11 +8,7 @@ const items = [
     altText: '',
     caption: ''
   },
-  {
-    src: Wood,
-    altText: '',
-    caption: ''
-  }
+ 
 ];
 
 const Jumbotron = () => <jumbotron items={items} />;
