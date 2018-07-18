@@ -2,27 +2,16 @@
   "name": "dusty-project",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8100/",
+  "proxy": "http://localhost:8200/",
   "dependencies": {
     "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "mysql2": "^1.5.3",
     "react": "^16.4.1",
-<<<<<<< HEAD
-    "react-announcement-bar": "0.0.1",
-    "react-bootstrap": "^0.32.1",
-    "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "react-table": "^6.8.6",
-=======
-    "react-dom": "^16.4.1",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
->>>>>>> 6a7c5a57f668d723268591832bfe945dbd957ab5
     "reactstrap": "^6.2.0",
     "redux": "^4.0.0",
     "sequelize": "^4.38.0"

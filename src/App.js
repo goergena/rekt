@@ -4,20 +4,6 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
-<<<<<<< HEAD
-// import HomePage from './components/HomePage/HomePage.js';
-// import StatsPage from './components/StatsPage/StatsPage.js';
-import BowlingPage from './components/BowlingPage/BowlingPage.js';
-import RecPage from './components/RecPage/RecPage.js';
-import LeaguePage from './components/LeaguePage/LeaguePage.js';
-// import Product from './components/Product/Product.js';
-// import Cart from './containers/Cart';
-import ProductList from './containers/ProductList';
-// import axios from "axios";
-import LoginPage from './components/LoginPage/LoginPage.js';
-// import NotFound from './components/NotFound/NotFound.js';
-// import Callback from './components/Callback/Callback.js';
-=======
 import HomePage from './components/HomePage/HomePage.js';
 import StatsPage from './components/StatsPage/StatsPage.js';
 import Bowling from './components/BowlingPage/BowlingPage.js';
@@ -30,16 +16,15 @@ import ProductList from './containers/ProductList';
 import Login from './components/LoginPage/LoginPage.js';
 import NotFound from './components/NotFound/NotFound.js';
 import Callback from './components/Callback/Callback.js';
->>>>>>> 6a7c5a57f668d723268591832bfe945dbd957ab5
 import NavBar from './components/NavBar/NavBar.js';
 import ScoreKeeping from './components/StatsPage/ScoreKeeping.js';
 import TeamTable from './components/StatsPage/TeamTable.js';
+import TeamCreation from './components/LeaguePage/LeaguePage.js';
 
 // const Home = () => (
 //   <HomePage />
 // );
 
-<<<<<<< HEAD
 const Table = () => (
   <TeamTable />
 )
@@ -48,22 +33,13 @@ const ScoreKeep = () => (
   <ScoreKeeping />
 )
 
-const Login = () => (
-  <LoginPage />
-)
-=======
-// const Login = () => (
-//   <LoginPage />
-// )
->>>>>>> 6a7c5a57f668d723268591832bfe945dbd957ab5
-
 // const Rec = () => (
 //   <RecPage />
 // )
 
-// const League = () => (
-//   <LeaguePage />
-// )
+const TeamCreate = () => (
+  <TeamCreation />
+)
 
 // const Bowling = () => (
 //   <BowlingPage />
@@ -93,7 +69,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/rec" component={Rec} />
             <Route path="/productlist" component={ProductList} />
-            <Route path="/leagues/mondays" component={League} />
+            <Route path="/league" component={TeamCreate} />
             <Route path="/bowling" component={Bowling} />
             <Route path="/scorekeeping" component={ScoreKeep} />
             <Route path ="/teamtable" component={Table} />

@@ -42,12 +42,35 @@ let teamdata2 = [{
     totalStrikes: 27
 }] 
 
+function onAfterDeleteRow(rowKeys) {
+    alert('Rows Dropped ' + rowKeys);
+  }
+
+function onAfterInsertRow(row) {
+    let newRowStr = '';
+  
+    for (const prop in row) {
+      newRowStr += prop + ': ' + row[prop] + ' \n';
+    }
+    alert('The new row :\n ' + newRowStr);
+  }
+  
+  const options = {
+    afterInsertRow: onAfterInsertRow,
+    afterDeleteRow: onAfterDeleteRow 
+  };
+
+  // If you want to enable deleteRow, you must enable row selection also.
+const selectRowProp = {
+    mode: 'checkbox'
+  };
+
 export default class TeamTable extends React.Component {
   render() {
     return (
     <div>
     <h1>Team Dustin</h1>
-      <BootstrapTable data={ teamdata }>
+      <BootstrapTable data={ teamdata } insertRow={ true } options={ options } deleteRow={ true } selectRow={ selectRowProp }>
         <TableHeaderColumn width='150' dataField='player' isKey>Player</TableHeaderColumn>
         <TableHeaderColumn width='150' dataField='handicap'>Handicap</TableHeaderColumn>
         <TableHeaderColumn width='150' dataField='average'>Average</TableHeaderColumn>
@@ -55,7 +78,7 @@ export default class TeamTable extends React.Component {
         <TableHeaderColumn width='150' dataField='totalStrikes'>Total Strikes</TableHeaderColumn>
       </BootstrapTable>
       <h1>Team Blake</h1>
-      <BootstrapTable data={ teamdata2 }>
+      <BootstrapTable data={ teamdata2 } insertRow={ true } options={ options } deleteRow={ true } selectRow={ selectRowProp }>
         <TableHeaderColumn width='150' dataField='player' isKey>Player</TableHeaderColumn>
         <TableHeaderColumn width='150' dataField='handicap'>Handicap</TableHeaderColumn>
         <TableHeaderColumn width='150' dataField='average'>Average</TableHeaderColumn>
