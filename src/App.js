@@ -16,30 +16,38 @@ import ProductList from './containers/ProductList';
 import NotFound from './components/NotFound/NotFound.js';
 import Callback from './components/Callback/Callback.js';
 import NavBar from './components/NavBar/NavBar.js';
+import ScoreKeeping from './components/StatsPage/ScoreKeeping.js';
+import TeamTable from './components/StatsPage/TeamTable.js';
+import TeamCreation from './components/LeaguePage/LeaguePage.js';
 
 // const Home = () => (
 //   <HomePage />
 // );
 
-// const Login = () => (
-//   <LoginPage />
-// )
+const Table = () => (
+  <TeamTable />
+)
+
+const ScoreKeep = () => (
+  <ScoreKeeping />
+)
 
 // const Rec = () => (
 //   <RecPage />
 // )
 
-// const League = () => (
-//   <LeaguePage />
-// )
+const TeamCreate = () => (
+  <TeamCreation />
+)
 
 // const Bowling = () => (
 //   <BowlingPage />
 // )
 
-const Loading = () => (
-  <Callback />
-)
+// const Loading = () => (
+//   <Callback />
+// )
+
 class App extends Component {
 
   componentDidMount() {
@@ -59,8 +67,10 @@ class App extends Component {
           <div className="App">
             <Route path="/rec" component={Rec} />
             <Route path="/productlist" component={ProductList} />
-            <Route path="/leagues/mondays" component={League} />
+            <Route path="/league" component={TeamCreate} />
             <Route path="/bowling" component={Bowling} />
+            <Route path="/scorekeeping" component={ScoreKeep} />
+            <Route path ="/teamtable" component={Table} />
           </div></Router>
 
       </div>

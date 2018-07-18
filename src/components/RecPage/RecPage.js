@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class RecPage extends Component {
   render() {
     return (
@@ -12,7 +11,7 @@ class RecPage extends Component {
     <div className="card-title">Write an Announcement</div>
       <form>
         <div className="form-group">
-            <label for="sport">Sport</label>
+            <label htmlFor="sport">Sport</label>
             <select className="form-control" id="sport">
               <option >Choose...</option>
               <option value="bowling">Bowling</option>
@@ -21,7 +20,7 @@ class RecPage extends Component {
             </select>
         </div>
         <div className="form-group">
-            <label for="league">League</label>
+            <label htmlFor="league">League</label>
             <select multiple className="form-control" id="league">
                 <option >Choose...</option>
                 <option value="monday">Monday</option>
@@ -30,7 +29,7 @@ class RecPage extends Component {
             </select>
         </div>
         <div className="form-group">
-            <label for="announcement">Announcement</label>
+            <label htmlFor="announcement">Announcement</label>
             <textarea className="form-control" id="announcement" rows="3"></textarea>
         </div>
 
