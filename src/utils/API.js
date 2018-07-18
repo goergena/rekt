@@ -6,8 +6,8 @@ export default {
     return axios.get('api/teams/');
   },
 
-  getPlayers: function (teamId) {
-    return axios.get(`api/players/${teamId}`);
+  postPlayer: function (req) {
+    return axios.post(`api/players/`, req);
   },
 
   // getAllSports: function () {
