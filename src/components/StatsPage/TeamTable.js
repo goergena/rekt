@@ -25,15 +25,16 @@ export default class TeamTable extends React.Component {
     return (
     <div className='container'>
     <div className='row'>
-    <div className='flex-column'>
+    <div className='flex-column position-fixed'>
     <div id="list-example" class="list-group">
-  <a class="list-group-item list-group-item-action" href="#team1">Item 1</a>
-  <a class="list-group-item list-group-item-action" href="#team2">Item 2</a>
-  <a class="list-group-item list-group-item-action" href="#team3">Item 3</a>
-  <a class="list-group-item list-group-item-action" href="#team4">Item 4</a>
+
+  <a className="list-group-item list-group-item-action" href="#team1"></a>
+  <a className="list-group-item list-group-item-action" href="#team2">Item 2</a>
+  <a className="list-group-item list-group-item-action" href="#team3">Item 3</a>
+  <a className="list-group-item list-group-item-action" href="#team4">Item 4</a>
 </div>
 </div>
-    <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" className="col-md-8">
+    <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" className="flex-column float-right">
 
       {this.state.teams.map(team => (
         <div key={team.id} id={`team${team.id}`}>
