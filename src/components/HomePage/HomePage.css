@@ -1,5 +1,5 @@
-/* 
 
+/* 
 img.bg {
 	/* Set rules to fill background 
 	min-height: 100%;
@@ -15,11 +15,19 @@ img.bg {
 	left: 0;
   }
   
-  @media screen and (max-width: 1024px) { /* Specific to this particular image 
+  @media screen and (max-width: 1024px) {  Specific to this particular image 
 	img.bg {
 	  left: 50%;
-	  margin-left: -512px;   /* 50% 
+	  margin-left: -512px;    50% 
 	}
-  }
+	} */
+	
+	body
+	{background: url('../../../build/images/Arrows.jpg');
+	height: 100%; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	} 
   
- */
+ 

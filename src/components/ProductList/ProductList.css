@@ -9,5 +9,16 @@
 
 .product-list__item {
     list-style: none;
-    width: 32%;
+    width: 40%;
 }
+
+/* .product-list__item img {
+    list-style: none;
+    width: 32%;
+} */
+.product-list__item img {
+    width: 40%;
+}
+
+
+
