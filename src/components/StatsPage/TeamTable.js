@@ -1,33 +1,7 @@
 import React from 'react';
 import API from '../../utils/API';
-import ModalAddPlayer from './ModalAddPlayer';
-import ModalAddTeam from './ModalAddTeam';
-
+import './teamtable.css';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-
-function onAfterDeleteRow(rowKeys) {
-    
-    alert('Rows Dropped ' + rowKeys);
-  }
-
-function onAfterInsertRow(row) {
-    let newRowStr = '';
-  
-    for (const prop in row) {
-      newRowStr += prop + ': ' + row[prop] + ' \n';
-    }
-    alert('The new row :\n ' + newRowStr);
-  }
-  
-  const options = {
-    afterInsertRow: onAfterInsertRow,
-    afterDeleteRow: onAfterDeleteRow 
-  };
-
-  // If you want to enable deleteRow, you must enable row selection also.
-const selectRowProp = {
-    mode: 'checkbox'
-  };
 
 export default class TeamTable extends React.Component {
   state= {
@@ -42,16 +16,15 @@ export default class TeamTable extends React.Component {
     API.getTeamList().then(res => (this.setState({teams: res.data})))
   }
 
-  
   render() {
     return (
-    <div className='container'>
+    <div className='row'>
 
       {this.state.teams.map(team => (
-        <div key={team.id} className="col-md">
+        <div key={team.id} className='col-md-12 teamTable'>
    
-          <h2>{team.teamName}</h2> 
-          <h4 className='text-center'>Wins: {team.wins} Losses: {team.losses} Total Games: {team.totalGames}</h4>
+          <h3 className="text-center">{team.teamName}</h3> 
+          <h4 className="text-center">Wins: {team.wins} Losses: {team.losses} Total Games: {team.totalGames}</h4>
           <BootstrapTable data= {team.Players} >
             <TableHeaderColumn width='150' dataField='playerName' isKey>Player</TableHeaderColumn>
             <TableHeaderColumn width='150' dataField='average'>Average</TableHeaderColumn>
@@ -59,16 +32,12 @@ export default class TeamTable extends React.Component {
             <TableHeaderColumn width='150' dataField='bestScore'>Best Score</TableHeaderColumn>
             <TableHeaderColumn width='150' dataField='totalStrikes'>Total Strikes</TableHeaderColumn>
           </BootstrapTable>
-         
-          <ModalAddPlayer className="text-left" selectTeamId={this.state.selectTeamId} />
+       
       </div>
       ))}
 
-      <ModalAddTeam/>
-    </div>
+      </div>
+   
     );
   }
 }
-
-
-// insertRow={ true } options={ options } deleteRow={ true } selectRow={ selectRowProp }

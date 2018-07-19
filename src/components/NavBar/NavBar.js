@@ -1,36 +1,52 @@
+
 import React from 'react';
-import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
 import "./NavBar.css";
+import ModalLogin from '../Login/Login.js'
 
 export default class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
       <div>
-        <Nav>
-          <NavItem>
-            <NavLink href="/">Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/rec">Leagues</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/productlist">Shop</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/bowling">Bowling</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/scorekeeping">ScoreKeeping</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/teamtable">Team Data</NavLink>
-          </NavItem>
-        </Nav>
-  
-        <Nav>
-            <Button color="primary" >Stats Coordinator Login</Button>
-        </Nav>
-        <h2>Welcome to It's Rec Ball!</h2>
+        <Navbar id="bar" color="light" light expand="md" >
+          <NavbarBrand id="brand" href="/">It's Rec Ball!</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/teams">Teams</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/shop">Shop</NavLink>
+              </NavItem>
+              <NavItem>
+              <ModalLogin />
+              </NavItem>
+
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }
