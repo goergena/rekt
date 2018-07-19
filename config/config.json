@@ -19,6 +19,7 @@
     "password": "juec2i82uale4j17",
     "database": "iu8k25esorsskwr3",
     "host": "wiad5ra41q8129zn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "PORT": 3306
   }
 }
