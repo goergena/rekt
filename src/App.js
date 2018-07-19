@@ -6,6 +6,7 @@ import ProductList from './containers/ProductList';
 import NavBar from './components/NavBar/index.js';
 import TeamTable from './components/StatsPage/TeamTable.js';
 import HomePage from './components/HomePage/HomePage';
+import TeamNav from './components/StatsPage/TeamNav.js'
 
 const Home = () => ( <HomePage />);
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route path="/scorekeeping" component={ScoreKeep} />
             <Route path ="/bowlingstats" component={Table} />
             <Route path ="/addteam" component={TeamCreate} />
+            <Route path ="/teamnav" component={TeamNav} />
           </div></Router>
 
       </div>

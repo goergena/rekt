@@ -1,25 +1,31 @@
 import React from 'react';
 
 const TeamNav = (props) =>(
-    <div>
+    <div className="container">
+      <div className='row'>
 
-
-
-<div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-  <h4 id="item-1">Item 1</h4>
+<div id="list-example" className="list-group flex-column position-fixed">
+  <a className="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+  <a className="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+  <a className="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+  <a className="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+</div>
+<div data-spy="scroll" data-target="#list-example" data-offset="0" className="scrollspy-example container">
+<div className="float-right col-md-9">
+  <h4 id="list-item-1">Item 1</h4>
+  <p>.rs` AS `Players` ON `Teams`.`id` = `Players`.`TeamId`;
+Executing (default): SELECT `Teams`.`id`, `Teams`.`teamName`, `Teams`.`wins`, `Teams`.`losses`, `Teams`.`totalGames`, `Teams`.`createdAt`, `Teams`.`updatedAt`, `Players`.`id` AS `Players.id`, `Players`.`playerName` AS `Players.playerName`, `Players`.`average` AS `Players.average`, `Players`.`handicap` AS `Players.handicap`, `Players`.`bestScore` AS `Players.bestScore`, `Players`.`totalStrikes` AS `Players.totalStrikes`, `Players`.`createdAt` AS `Players.createdAt`, `Players`.`updatedAt` AS `Players.updatedAt`, `Players`.`TeamId` AS `Players.TeamId` FROM `Teams` AS `Teams` LEFT OUTER JOIN `Players` AS `Players` ON `Teams`.`id` = `Players`.`TeamId`;
+Executing (default): SELECT `Teams`.`id`, `Teams`.`teamName`, `Teams`.`wins`, `Teams`.`losses`, `Teams`.`totalGames`, `Teams`.`createdAt`, `Teams`.`updatedAt`, `Players`.`id` AS `Players.id`, `Players`.`playerName` AS `Players.playerName`, `Players`.`average` AS `Players.average`, `Players`.`handicap` AS `Players.handicap`, `Players`.`bestScore` AS `Players.bestScore`, `Players`.`totalStrikes` AS `Players.totalStrikes`, `Players`.`createdAt` AS `Players.createdAt`, `Players`.`updatedAt` AS `Players.updatedAt`, `Players`.`TeamId` AS `Players.TeamId` FROM `Teams` AS `Teams` LEFT OUTER JOIN `Players` AS `Players` ON `Teams`.`id` = `Players`.`TeamId`;</p>
+  <h4 id="list-item-2">Item 2</h4>
+  <p>rs` AS `Players` ON `Teams`.`id` = `Players`.`TeamId`;
+Executing (default): SELECT `Teams`.`id`, `Teams`.`teamName`, `Teams`.`wins`, `Teams`.`losses`, `Teams`.`totalGames`, `Teams`.`createdAt`, `Teams`.`updatedAt`, `Players`.`id` AS `Players.id`, `Players`.`playerName` AS `Players.playerName`, `Players`.`average` AS `Players.average`, `Players`.`handicap` AS `Players.handicap`, `Players`.`bestScore` AS `Players.bestScore`, `Players`.`totalStrikes` AS `Players.totalStrikes`, `Players`.`createdAt` AS `Players.createdAt`, `Players`.`updatedAt` AS `Players.updatedAt`, `Players`.`TeamId` AS `Players.TeamId` FROM `Teams` AS `Teams` LEFT OUTER JOIN `Players` AS `Players` ON `Teams`.`id` = `Players`.`TeamId`;
+Executing (default): SELECT `Teams`.`id`, `Teams`.`teamName`, `Teams`.`wins`, `Teams`.`losses`, `Teams`.`totalGames`, `Teams`.`createdAt`, `Teams`.`updatedAt`, `Players`.`id` AS `Players.id`, `Players`.`playerName` AS `Players.playerName`, `Players`.`average` AS `Players.average`, `Players`.`handicap` AS `Players.handicap`, `Players`.`bestScore` AS `Players.bestScore`, `Players`.`totalStrikes` AS `Players.totalStrikes`, `Players`.`createdAt` AS `Players.createdAt`, `Players`.`updatedAt` AS `Players.updatedAt`, `Players`.`TeamId` AS `Players.TeamId` FROM `Teams` AS `Teams` LEFT OUTER JOIN `Players` AS `Players` ON `Teams`.`id` = `Players`.`TeamId`;</p>
+  <h4 id="list-item-3">Item 3</h4>
   <p>...</p>
-  <h5 id="item-1-1">Item 1-1</h5>
+  <h4 id="list-item-4">Item 4</h4>
   <p>...</p>
-  <h5 id="item-1-2">Item 2-2</h5>
-  <p>...</p>
-  <h4 id="item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="item-3">Item 3</h4>
-  <p>...</p>
-  <h5 id="item-3-1">Item 3-1</h5>
-  <p>...</p>
-  <h5 id="item-3-2">Item 3-2</h5>
-  <p>...</p>
+  </div>
+</div>
 </div>
 </div>
 );
