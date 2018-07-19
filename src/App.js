@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Cart from './containers/Cart';
 import ProductList from './containers/ProductList';
-import NavBar from './components/NavBar/NavBar.js';
+import NavBar from './components/NavBar';
 import TeamTable from './components/StatsPage/TeamTable.js';
 import HomePage from './components/HomePage/HomePage';
 

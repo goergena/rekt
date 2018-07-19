@@ -6,29 +6,6 @@ import ModalAddTeam from './ModalAddTeam';
 
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-function onAfterDeleteRow(rowKeys) {
-    
-    alert('Rows Dropped ' + rowKeys);
-  }
-
-function onAfterInsertRow(row) {
-    let newRowStr = '';
-  
-    for (const prop in row) {
-      newRowStr += prop + ': ' + row[prop] + ' \n';
-    }
-    alert('The new row :\n ' + newRowStr);
-  }
-  
-  const options = {
-    afterInsertRow: onAfterInsertRow,
-    afterDeleteRow: onAfterDeleteRow 
-  };
-
-  // If you want to enable deleteRow, you must enable row selection also.
-const selectRowProp = {
-    mode: 'checkbox'
-  };
 
 export default class TeamTable extends React.Component {
   state= {

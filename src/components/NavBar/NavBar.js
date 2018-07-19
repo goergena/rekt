@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 import "./NavBar.css";
 
 export default class NavBar extends React.Component {
@@ -14,12 +14,12 @@ export default class NavBar extends React.Component {
             <NavLink href="/shop">Shop</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/teamtable">Team Stats</NavLink>
+            <NavLink href="/bowlingstats">Stats</NavLink>
           </NavItem>
         </Nav>
   
 
-        <h2>It's Rec Ball!</h2>
+        <a href="/"><h2 id="logo">It's Rec Ball!</h2></a>
       </div>
     );
   }
