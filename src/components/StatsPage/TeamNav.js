@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TeamNav = (props) =>(
-    <div className="container">
+    
       <div className='row'>
 
 <div id="list-example" className="list-group flex-column position-fixed">
@@ -27,7 +27,7 @@ Executing (default): SELECT `Teams`.`id`, `Teams`.`teamName`, `Teams`.`wins`, `T
   </div>
 </div>
 </div>
-</div>
+
 );
 
 export default TeamNav;

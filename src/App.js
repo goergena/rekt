@@ -7,6 +7,7 @@ import NavBar from './components/NavBar/index.js';
 import TeamTable from './components/StatsPage/TeamTable.js';
 import HomePage from './components/HomePage/HomePage';
 import TeamNav from './components/StatsPage/TeamNav.js'
+import Wrapper from './components/Wrapper/Wrapper.js'
 
 import Add from './components/Add/Add.js';
 
@@ -27,17 +28,18 @@ class App extends Component {
         <header className="App-header">
           <NavBar></NavBar>
         </header>
-
-        <Router>
-          <div className="App">
-            <Route exact path = "/" component={Home} />
-            <Route path="/shop" component={ProductList} />
-            <Route path="/scorekeeping" component={ScoreKeep} />
-            <Route path ="/bowlingstats" component={Table} />
-            <Route path ="/addteam" component={TeamCreate} />
-            <Route path ="/teamnav" component={TeamNav} />
-            <Route path ="/add" component={Add} />
-          </div></Router>
+        <Wrapper>
+          <Router>
+            <div className="App">
+              <Route exact path = "/" component={Home} />
+              <Route path="/shop" component={ProductList} />
+              <Route path="/scorekeeping" component={ScoreKeep} />
+              <Route path ="/teams" component={Table} />
+              <Route path ="/teamnav" component={TeamNav} />
+              <Route path ="/add" component={Add} />
+            </div>
+          </Router>
+        </Wrapper>
 
       </div>
     );

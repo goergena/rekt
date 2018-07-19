@@ -1,8 +1,7 @@
 import React from 'react';
 import API from '../../utils/API';
 import './teamtable.css';
-import ModalAddPlayer from './ModalAddPlayer';
-import ModalAddTeam from './ModalAddTeam';
+import ModalLogin from '../Login/Login.js'
 
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
@@ -23,7 +22,6 @@ export default class TeamTable extends React.Component {
   
   render() {
     return (
-    <div className='container'>
     <div className='row'>
 
       {this.state.teams.map(team => (
@@ -38,14 +36,12 @@ export default class TeamTable extends React.Component {
             <TableHeaderColumn width='150' dataField='bestScore'>Best Score</TableHeaderColumn>
             <TableHeaderColumn width='150' dataField='totalStrikes'>Total Strikes</TableHeaderColumn>
           </BootstrapTable>
-         
-          <ModalAddPlayer className="text-left" selectTeamId={this.state.selectTeamId} />
+       
       </div>
       ))}
-
-      <ModalAddTeam/>
+  <ModalLogin/>
       </div>
-    </div>
+   
 
     );
   }

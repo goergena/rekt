@@ -2,7 +2,7 @@ import React from "react";
 import "./wrapper.css";
 
 const Wrapper = props => (
-<div className="container"
+<div className="container mt-4"
  {...props}
  />
 )
