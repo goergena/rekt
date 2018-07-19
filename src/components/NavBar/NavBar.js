@@ -28,8 +28,8 @@ export default class NavBar extends React.Component {
   }
   render() {
     return (
-      <div className="sticky-top">
-        <Navbar id="bar" light expand="md" >
+      <div>
+        <Navbar id="bar" color="light" light expand="md" >
           <NavbarBrand id="brand" href="/">It's Rec Ball!</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

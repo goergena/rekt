@@ -103,7 +103,7 @@ export default class Add extends React.Component {
     <input value={this.state.totalGames} onChange={this.handleInputChange} type="number" className="form-control" name="totalGames" placeholder="Best Score"/>
   </div>
   <button    disabled={!(this.state.teamName)}
-      onClick={this.handleTeamSubmit} type="button" className="btn btn-primary">Save changes</button>
+      onClick={this.handleTeamSubmit} type="button" className="btn btn-info">Save changes</button>
 </form>
 </div>
 
@@ -141,7 +141,7 @@ export default class Add extends React.Component {
   </div>
   <button    
     disabled={!(this.state.playerName && this.state.average)}
-    onClick={this.handlePlayerSubmit} type="button" className="btn btn-primary">Save changes</button>
+    onClick={this.handlePlayerSubmit} type="button" className="btn btn-info">Save changes</button>
 
 </form>
 </div>

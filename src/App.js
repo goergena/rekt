@@ -15,9 +15,6 @@ const Home = () => ( <HomePage />);
 
 const Table = () => ( <TeamTable />)
 
-const ScoreKeep = () => (<ScoreKeeping />)
-
-const TeamCreate = () => (<TeamCreation />)
 
 
 class App extends Component {
@@ -33,7 +30,6 @@ class App extends Component {
             <div className="App">
               <Route exact path = "/" component={Home} />
               <Route path="/shop" component={ProductList} />
-              <Route path="/scorekeeping" component={ScoreKeep} />
               <Route path ="/teams" component={Table} />
               <Route path ="/teamnav" component={TeamNav} />
               <Route path ="/add" component={Add} />
