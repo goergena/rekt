@@ -27,10 +27,10 @@ export default class TeamTable extends React.Component {
     <div className='row'>
 
       {this.state.teams.map(team => (
-        <div key={team.id} className='col-md-12'>
+        <div key={team.id} className='col-md-12 teamTable'>
    
-          <h2>{team.teamName}</h2> 
-          <h4 className='text-center'>Wins: {team.wins} Losses: {team.losses} Total Games: {team.totalGames}</h4>
+          <h3 className="text-center">{team.teamName}</h3> 
+          <h4>Wins: {team.wins} Losses: {team.losses} Total Games: {team.totalGames}</h4>
           <BootstrapTable data= {team.Players} >
             <TableHeaderColumn width='150' dataField='playerName' isKey>Player</TableHeaderColumn>
             <TableHeaderColumn width='150' dataField='average'>Average</TableHeaderColumn>
