@@ -9,7 +9,7 @@ class HomePage extends Component {
       <div className="container-fluid">
       <div className="row homepage-header">
         <div className="col-sm-12">
-          <Jumbotron />
+ 
         </div>
         </div>
 

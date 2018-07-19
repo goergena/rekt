@@ -1,6 +1,22 @@
 .navbar-title:hover {
     cursor: pointer;
   }
+#bar {
+      background-color: #f7d8a5;
+  }
+#brand {
+    font-family: 'Faster One', cursive;
+    font-size: 32pt;
+    color: #cd5334;
+}
+
+#brand:hover {
+    color: #bf4c2f;
+}
+
+#bar > NavLink {
+    color: #326771;
+}
 
 /* #logo {
       font-family: 'Faster One', cursive;
