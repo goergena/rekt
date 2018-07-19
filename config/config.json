@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "Phantom1",
     "socketPath": "/Applications/MAMP/tmp/mysql/mysql.sock",
     "database": "rekt_db",
     "host": "127.0.0.1",
