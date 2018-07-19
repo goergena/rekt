@@ -30,4 +30,18 @@ img.bg {
 	background-size: cover;
 	}  */
   
+<<<<<<< HEAD
  
+=======
+ */
+
+
+body {
+	background-image: url('https://lickerishsplit.files.wordpress.com/2013/04/all-star-lanes-bowling-alley.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#welcome {
+	background-color: white;
+>>>>>>> 27a9e997c54728e73595fd437249e91a96d91369
