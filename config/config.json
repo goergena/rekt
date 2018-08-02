@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "Phantom1!",
+    "password": "root",
     "socketPath": "/Applications/MAMP/tmp/mysql/mysql.sock",
     "database": "rekt_db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
