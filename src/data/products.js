@@ -22,15 +22,15 @@ const data = [
   },
   {
     id: 4,
-    name: 'Bowling Ball',
-    price: 200.00,
+    name: 'Bowling Shoes',
+    price: 60.00,
     currency: 'US',
     image: img4,
   },
   {
     id: 6,
-    name: 'Bowling Shoes',
-    price: 75.00,
+    name: 'Basketball',
+    price: 30.00,
     currency: 'US',
     image: img6,
   },
@@ -43,8 +43,8 @@ const data = [
   },
   {
     id: 3,
-    name: 'Basketball',
-    price: 30.00,
+    name: 'Bowling Ball',
+    price: 100.00,
     currency: 'US',
     image: img3,
   }
