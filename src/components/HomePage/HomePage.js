@@ -1,40 +1,25 @@
 import React, { Component } from 'react';
-
+import './HomePage.css';
+import Jumbotron from '../Jumbotron/Jumbotron';
+//  when models and pages are complete, import options
+// import SportsOptions from '../SportsOptions/SportsOptions';
 class HomePage extends Component {
-  render() {
+    render() {
     return (
-      <div className="HomePage">
-        <h2>REKT</h2>
-        <a href="/login">Login</a>
-
-        {!this.props.auth.isAuthenticated() && 
-        <div>
-         <hr/>
-            <br />
-            <button onClick={this.props.auth.login}>Login</button>
-          <hr/>
+      <body>
+      <div className="container-fluid">
+      <div className="row homepage-header">
+        <div className="col-sm-12" id="welcome">
+          <h1>(Demo) Welcome! Click Log In to get started saving your teams stats!</h1>
+          <h2>Upcoming features:</h2>
+          <p>League Management, Secure Login, Player Tracking, Leaderboard, Stat Keeping</p>
         </div>
-        }
-        <br />
-        {this.props.auth.isAuthenticated() && 
-        <div>
-          <a href="/stats">Stat Coordinator Page </a>
         </div>
-        }
-        <br />
-        <a href="/buySell">Buy & Sell Equipment</a>
-        <br />
-        <a href="/rec">Rec Coord Page </a>
-        <br />
-        <a href="/leagues/mondays">LEAGUE </a>
-        <br />
-        <a href="/bowling">Bowling </a>
-      </div>
-
-
-
+        </div>
+      </body>
     );
   }
 }
+
 
 export default HomePage;

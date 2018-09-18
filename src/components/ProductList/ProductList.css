@@ -1,1 +1,28 @@
 
+.product-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.product-list__item {
+    list-style: none;
+    width: 40%;
+}
+
+/* .product-list__item img {
+    list-style: none;
+    width: 32%;
+} */
+.product-list__item img {
+    width: 40%;
+}
+
+body {
+    color: #f44658;
+}
+
+
+

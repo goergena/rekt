@@ -1,0 +1,43 @@
+.navbar-title:hover {
+    cursor: pointer;
+  }
+
+#brand {
+    font-family: 'Faster One', cursive;
+    font-size: 32pt;
+    color: #F44658;
+}
+
+#brand:hover {
+    color: #bf4c2f;
+}
+
+/* #logo {
+      font-family: 'Faster One', cursive;
+      font-size: 45pt;
+      color: #ffffff;
+
+  }
+  a:hover {
+      color: pink;
+
+  } */
+  
+  /* .navbar-main {
+    background-color: #e56;
+    color: #fff;
+  }
+  
+  .navbar-text {
+      color: white !important;
+      vertical-align: middle;
+      margin: 0px 10px 0px 10px;
+  }
+  
+  .clickable:hover {
+      cursor: pointer;
+  }
+  
+  .welcome-text {
+      margin: 0px 10px 0px 10px;
+  } */

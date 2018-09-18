@@ -1,0 +1,14 @@
+.teamTable > h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 44pt;
+    color: #63a375;
+}
+
+.teamTable > h4 {
+    font-family: 'Bangers', cursive;
+    font-size: 24pt;
+}
+
+.teamTable {
+    background-color: white;
+}

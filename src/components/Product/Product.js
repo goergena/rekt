@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Product extends Component {
-    handleClick = () => {
+    handleClick() {
         const { id, addToCart, removeFromCart, isInCart } = this.props;
 
         if (isInCart) {
@@ -24,7 +24,7 @@ class Product extends Component {
                     <div className="product__button-wrap">
                         <button
                             className={isInCart ? 'btn btn-danger' : 'btn btn-primary'}
-                            onClick={this.handleClick}
+                            onClick={() => this.handleClick()}
                         >
                             {isInCart ? 'Remove' : 'Add to cart'}
                         </button>

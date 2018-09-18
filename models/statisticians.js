@@ -18,12 +18,12 @@ module.exports = function (sequelize, DataTypes) {
         },
 
     });
-    Statisticians.associate = function (models) {
-        Statisticians.belongsTo(models.Towns, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Statisticians.associate = function (models) {
+    //     Statisticians.belongsTo(models.Towns, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
     return Statisticians;
 };

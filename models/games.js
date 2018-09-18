@@ -20,18 +20,18 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    Games.associate = function (models) {
-        Games.belongsTo(models.Teams, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-        Games.hasMany(models.BowlingStats, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Games.associate = function (models) {
+    //     Games.belongsTo(models.Teams, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    //     Games.hasMany(models.BowlingStats, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return Games;
 };

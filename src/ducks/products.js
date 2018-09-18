@@ -5,6 +5,7 @@ export default function products(state = []) {
 
 // selectors
 export function getProducts(state, props) {
+    console.log(state.products);
     return state.products;
 }
 
