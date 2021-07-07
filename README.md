@@ -33,17 +33,15 @@ Clone the repo into your local folder.
 
 1. Run `npm install` to download all necessary NPM dependencies
 
-2. Run `yarn install` to install all necessary React depedencies
+2. Launch your local server (e.g. MAMP)
 
-3. Launch your local server (e.g. MAMP)
+3. Open your database workbench (e.g. SequelPro)
 
-4. Open your database workbench (e.g. SequelPro)
+4. In a stand-alone terminal window, run `node server.js`
 
-5. In a stand-alone terminal window, run `node server.js`
+5. In a separate terminal window, run `npm run dev`
 
-6. In a separate terminal window, run `npm run dev`
-
-7. Navigate to **localhost:3000** in your browser of choice
+6. Navigate to **localhost:3000** in your browser of choice
 
 ## How It Works
 
